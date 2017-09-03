@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>j4work</artifactId>
+        <groupId>org.j4work</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.j4work.spring4</groupId>
+    <artifactId>spring4</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>web-json-auth</module>
+        <module>web-error-handling</module>
+    </modules>
+
+    <properties>
+        <j4work.bom.version>1.0-SNAPSHOT</j4work.bom.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-build-systems.html#using-boot-maven-without-a-parent -->
+                <groupId>org.j4work.bom</groupId>
+                <artifactId>unit-spring4</artifactId>
+                <version>${j4work.bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.spring4</groupId>
+                <artifactId>web-error-handling</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.spring4</groupId>
+                <artifactId>web-json-auth</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

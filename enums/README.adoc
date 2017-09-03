@@ -1,0 +1,124 @@
+
+:numbered:
+
+== Goal
+
+Allow conversions between java Enum  and primitive java data types:
+
+1. Boolean: boolean
+2. Exact Numbers: byte, short, int, long
+3. Text: char, String
+
+Only exact types are supported, i.e. no floats and doubles.
+
+These data types are the absolute basics for serialization:
+
+1. Serialization formats such as JSON, XML, YML, properties files, etc.
+2. Database Data types, i.e. SQL data types, MongoDB, etc.
+3. etc.
+
+=== Enums with Boolean Id
+
+. Boolean as boolean (fully covered):
+.. true = true
+.. false = false
+. Boolean as number type, aka byte/short/int/long (fully covered):
+.. false = number(0)
+.. true = number(!=0)
+. Boolean as char (case insensitive, fully covered):
+.. false = 'f' (false), 'n' (no), '0'
+.. true = 't' (true'), 'y' (yes), '1'
+. Boolean as string (case insensitive, fully covered):
+.. false = "f", "false" (false), "n", "no" (no), "off", '0'
+.. true = "t", "true" (true), "y", "yes" (yes), "on", "1"
+
+=== Enums with Number Id
+
+. Short as boolean (partially covered, semantically ambiguous):
+.. short(0) = false
+.. short(1) = true
+. Short as number type with smaller storage (partially covered):
+.. short(X) = number(X) for X=MIN_NUMBER_TYPE_VALUE..MAX_NUMBER_TYPE_VALUE
+.. short(X) not mapped for any other X
+. Short as number type, aka short/int/long (fully covered):
+.. short(X) = number(X) for any X
+. Short as char (partially covered, semantically ambiguous):
+.. short(X) = 'X', for X=0..9
+.. short(X) not mapped for any other X
+. Short as string (fully covered):
+.. short(X) = "X" for any X
+
+
+
+== Usage
+
+
+[source,java]
+----
+@IntEnum
+enum MyEnum {
+    @IntConst(id=20, name="const-a")
+    CONST_A,
+
+    @IntConst(id=20, name="b")
+    CONST_B
+}
+----
+
+OR
+
+[source,java]
+----
+enum MyEnum implements EnhancedEnum<Integer, AnnotatedEnumConverter> {
+    @IntConst(id=20, name="const-a")
+    CONST_A,
+
+    @IntConst(id=20, name="b")
+    CONST_B
+}
+----
+
+
+== Converter adapters
+
+=== Spring framework
+
+1. https://docs.spring.io/spring/docs/current/spring-framework-reference/html/validation.html#core-convert[Spring Type Conversion]
+
+=== Jackson
+
+2. http://wiki.fasterxml.com/JacksonHowToCustomSerializers[Jackson Serializers]
+
+=== Spring Data MongoDB
+
+4. http://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mapping-configuration[Spring Data MongoDB Mapping Configuration]
+
+=== Hibernate Custom Types
+
+https://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html/ch06.html#types-custom
+
+https://docs.jboss.org/hibernate/orm/3.5/api/org/hibernate/usertype/UserType.html
+
+https://github.com/JadiraOrg/jadira/tree/master/usertype.core
+
+=== JPA 2.1 Converters
+
+https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/ParameterizedType.html
+
+https://www.javacodegeeks.com/2014/05/jpa-2-1-type-converter-the-better-way-to-persist-enums.html
+
+http://docs.oracle.com/javaee/7/api/javax/persistence/Convert.html
+
+https://en.wikibooks.org/wiki/Java_Persistence/Basic_Attributes#Converters_.28JPA_2.1.29
+
+=== MongoDB Morphia
+
+5. https://mongodb.github.io/morphia/1.2/javadoc/org/mongodb/morphia/converters/TypeConverter.html[MongoDB Morphia TypeConverter]
+
+=== GSON
+
+3. https://sites.google.com/site/gson/gson-user-guide#TOC-Custom-Serialization-and-Deserialization[Gson Custom Serialization and Deserialization]
+
+=== JAXB
+
+6. https://docs.oracle.com/javase/7/docs/api/javax/xml/bind/annotation/adapters/XmlAdapter.html[JAXB XmlAdapter]

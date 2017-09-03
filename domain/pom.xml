@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>j4work</artifactId>
+        <groupId>org.j4work</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.j4work.domain</groupId>
+    <artifactId>domain</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>l10n-entities</module>
+        <module>l10n-spring4-data-repos</module>
+        <module>base-entities</module>
+        <module>base-jpa-mapping</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.j4work.domain</groupId>
+                <artifactId>base-entities</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.domain</groupId>
+                <artifactId>base-jpa-mapping</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.domain</groupId>
+                <artifactId>l10n-entities</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.domain</groupId>
+                <artifactId>l10n-spring4-data-repos</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

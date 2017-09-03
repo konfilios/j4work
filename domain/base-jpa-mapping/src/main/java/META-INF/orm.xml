@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings
+        xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd"
+        version="2.0">
+
+    <mapped-superclass class="org.j4work.domain.base.entities.AbstractEntity"/>
+
+    <mapped-superclass class="org.j4work.domain.base.entities.RefEntity">
+        <attributes>
+            <id name="id" />
+        </attributes>
+    </mapped-superclass>
+
+    <mapped-superclass class="org.j4work.domain.base.entities.RefL10nNamedEntity">
+
+    </mapped-superclass>
+
+    <mapped-superclass class="org.j4work.domain.base.entities.RefNamedEntity">
+        <attributes>
+            <basic name="name" />
+        </attributes>
+    </mapped-superclass>
+
+    <mapped-superclass class="org.j4work.domain.base.entities.StdEntity">
+        <attributes>
+            <id name="id">
+                <generated-value strategy="AUTO" />
+            </id>
+        </attributes>
+    </mapped-superclass>
+    
+    <mapped-superclass class="org.j4work.domain.base.entities.StdNamedEntity">
+        <attributes>
+            <basic name="name" />
+        </attributes>
+    </mapped-superclass>
+
+    <mapped-superclass class="org.j4work.domain.base.entities.StdUuEntity">
+        <attributes>
+            <id name="uuid">
+                <column nullable="false" column-definition="BINARY(16)" />
+                <generated-value generator="uuid2" />
+            </id>
+        </attributes>
+    </mapped-superclass>
+
+    <mapped-superclass class="org.j4work.domain.base.entities.StdUuNamedEntity">
+
+    </mapped-superclass>
+</entity-mappings>
