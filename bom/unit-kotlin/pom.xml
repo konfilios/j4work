@@ -16,7 +16,6 @@
 
     <properties>
         <kotlin-logging.version>1.4.6</kotlin-logging.version>
-        <kotlin.version>1.1.4-3</kotlin.version>
         <dokka.version>0.9.15</dokka.version>
     </properties>
 

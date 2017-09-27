@@ -13,13 +13,6 @@
     <artifactId>bom</artifactId>
     <packaging>pom</packaging>
 
-    <properties>
-        <kotlin-logging.version>1.4.6</kotlin-logging.version>
-        <kotlin.version>1.1.4</kotlin.version>
-        <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
-        <dokka.version>0.9.15</dokka.version>
-    </properties>
-
     <modules>
         <module>bundle-kotlin</module>
         <module>unit-kotlin</module>
@@ -29,6 +22,10 @@
         <module>unit-spring4</module>
     </modules>
 
+    <properties>
+        <kotlin.version>1.1.50</kotlin.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -36,7 +33,11 @@
                 <artifactId>unit-kotlin</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.j4work.bom</groupId>
+                <artifactId>bundle-kotlin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
