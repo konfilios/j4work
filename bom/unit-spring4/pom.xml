@@ -14,16 +14,13 @@
     <name>bom/unit/spring4</name>
     <packaging>pom</packaging>
 
-    <properties>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <!-- https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-build-systems.html#using-boot-maven-without-a-parent -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>1.4.7.RELEASE</version>
+                <version>${spring-boot.1.latest.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

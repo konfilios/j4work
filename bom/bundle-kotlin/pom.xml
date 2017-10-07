@@ -17,7 +17,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
-        <spring-boot.version>2.0.0.M4</spring-boot.version>
     </properties>
 
     <dependencies>
@@ -106,7 +105,7 @@
                 <!-- https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-build-systems.html#using-boot-maven-without-a-parent -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
+                <version>${spring-boot.2.latest.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -147,7 +146,7 @@
                 <!-- https://kotlinlang.org/docs/reference/using-maven.html -->
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
-                <version>${kotlin.version}</version>
+                <version>${kotlin.1.latest-version}</version>
                 <configuration>
                     <compilerPlugins>
                         <!-- Or "spring" for the Spring support -->
@@ -164,7 +163,7 @@
                     <!--<dependency>-->
                         <!--<groupId>org.jetbrains.kotlin</groupId>-->
                         <!--<artifactId>kotlin-maven-allopen</artifactId>-->
-                        <!--<version>${kotlin.version}</version>-->
+                        <!--<version>${kotlin.1.latest-version}</version>-->
                     <!--</dependency>-->
                 <!--</dependencies>-->
 
@@ -227,7 +226,7 @@
                     <!-- https://kotlinlang.org/docs/reference/using-maven.html -->
                     <groupId>org.jetbrains.kotlin</groupId>
                     <artifactId>kotlin-maven-plugin</artifactId>
-                    <version>${kotlin.version}</version>
+                    <version>${kotlin.1.latest-version}</version>
                     <configuration>
                         <compilerPlugins>
                             <!-- Or "spring" for the Spring support -->
@@ -244,7 +243,7 @@
                         <dependency>
                             <groupId>org.jetbrains.kotlin</groupId>
                             <artifactId>kotlin-maven-allopen</artifactId>
-                            <version>${kotlin.version}</version>
+                            <version>${kotlin.1.latest-version}</version>
                         </dependency>
                     </dependencies>
 
