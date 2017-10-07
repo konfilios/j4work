@@ -23,7 +23,7 @@
     </modules>
 
     <properties>
-        <kotlin.1.latest-version>1.1.50</kotlin.1.latest-version>
+        <kotlin.1.latest-version>1.1.51</kotlin.1.latest-version>
         <spring-boot.2.latest.version>2.0.0.M4</spring-boot.2.latest.version>
         <spring-boot.1.latest.version>1.4.7.RELEASE</spring-boot.1.latest.version>
     </properties>
