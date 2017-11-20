@@ -19,28 +19,14 @@
         <module>unit-apache-poi</module>
         <module>unit-selenium</module>
         <module>unit-browsermob</module>
+        <module>unit-spring5</module>
         <module>unit-spring4</module>
     </modules>
 
     <properties>
-        <kotlin.1.latest-version>1.1.51</kotlin.1.latest-version>
+        <kotlin.1.latest-version>1.1.60</kotlin.1.latest-version>
         <spring-boot.2.latest.version>2.0.0.M6</spring-boot.2.latest.version>
         <spring-boot.1.latest.version>1.5.8.RELEASE</spring-boot.1.latest.version>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.j4work.bom</groupId>
-                <artifactId>unit-kotlin</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.j4work.bom</groupId>
-                <artifactId>bundle-kotlin</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>

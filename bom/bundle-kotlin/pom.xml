@@ -72,31 +72,7 @@
             <dependency>
                 <groupId>org.j4work.bom</groupId>
                 <artifactId>unit-kotlin</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.j4work.bom</groupId>
-                <artifactId>unit-apache-poi</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.j4work.bom</groupId>
-                <artifactId>unit-selenium</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.j4work.bom</groupId>
-                <artifactId>unit-browsermob</artifactId>
-                <version>${project.version}</version>
+                <version>${j4work.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -106,6 +82,37 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.2.latest.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.bom</groupId>
+                <artifactId>unit-spring5</artifactId>
+                <version>${j4work.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.bom</groupId>
+                <artifactId>unit-apache-poi</artifactId>
+                <version>${j4work.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.bom</groupId>
+                <artifactId>unit-selenium</artifactId>
+                <version>${j4work.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.bom</groupId>
+                <artifactId>unit-browsermob</artifactId>
+                <version>${j4work.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

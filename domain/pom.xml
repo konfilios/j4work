@@ -20,29 +20,4 @@
         <module>base-jpa-mapping</module>
     </modules>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.j4work.domain</groupId>
-                <artifactId>base-entities</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.j4work.domain</groupId>
-                <artifactId>base-jpa-mapping</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.j4work.domain</groupId>
-                <artifactId>l10n-entities</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.j4work.domain</groupId>
-                <artifactId>l10n-spring4-data-repos</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
 </project>

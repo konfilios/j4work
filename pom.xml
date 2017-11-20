@@ -23,6 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <j4work.version>1.0-SNAPSHOT</j4work.version>
     </properties>
 
     <dependencies>
@@ -85,4 +86,117 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <dependencyManagement>
+
+
+        <dependencies>
+            <!--
+              bom
+              -->
+            <dependency>
+                <groupId>org.j4work.bom</groupId>
+                <artifactId>unit-kotlin</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.bom</groupId>
+                <artifactId>unit-spring4</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.bom</groupId>
+                <artifactId>unit-spring5</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.bom</groupId>
+                <artifactId>bundle-kotlin</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <!--
+              domain
+              -->
+            <dependency>
+                <groupId>org.j4work.domain</groupId>
+                <artifactId>base-entities</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.domain</groupId>
+                <artifactId>base-jpa-mapping</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.domain</groupId>
+                <artifactId>l10n-entities</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.domain</groupId>
+                <artifactId>l10n-spring4-data-repos</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <!--
+              enums
+              -->
+
+            <dependency>
+                <groupId>org.j4work.enums</groupId>
+                <artifactId>test-assertj-assertions</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.enums</groupId>
+                <artifactId>core-api</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.enums</groupId>
+                <artifactId>core-converters</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.enums</groupId>
+                <artifactId>core-serialenums</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <!--
+              spring4
+              -->
+
+            <dependency>
+                <groupId>org.j4work.spring4</groupId>
+                <artifactId>web-error-handling</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.spring4</groupId>
+                <artifactId>web-json-auth</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <!--
+              Util
+              -->
+            <dependency>
+                <groupId>org.j4work.util</groupId>
+                <artifactId>classutils-core</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.util</groupId>
+                <artifactId>datastructures</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

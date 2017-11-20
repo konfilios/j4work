@@ -75,30 +75,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-            <dependency>
-                <groupId>org.j4work.enums</groupId>
-                <artifactId>test-assertj-assertions</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.j4work.enums</groupId>
-                <artifactId>core-api</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.j4work.enums</groupId>
-                <artifactId>core-converters</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.j4work.enums</groupId>
-                <artifactId>core-serialenums</artifactId>
-                <version>${project.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
