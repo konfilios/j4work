@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <kotlin-logging.version>1.4.6</kotlin-logging.version>
+        <kotlin-logging.version>1.4.8</kotlin-logging.version>
         <dokka.version>0.9.15</dokka.version>
     </properties>
 
@@ -49,6 +49,18 @@
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib-jdk8</artifactId>
+                <version>${kotlin.1.latest-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk7</artifactId>
+                <version>${kotlin.1.latest-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib</artifactId>
                 <version>${kotlin.1.latest-version}</version>
             </dependency>
 
