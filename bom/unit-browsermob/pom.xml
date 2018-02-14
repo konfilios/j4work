@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <browsermob.version>2.1.4</browsermob.version>
+        <browsermob.version>2.1.5</browsermob.version>
     </properties>
 
     <dependencyManagement>
