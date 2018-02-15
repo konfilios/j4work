@@ -26,7 +26,7 @@
     <mapped-superclass class="org.j4work.domain.base.entities.StdEntity" access="FIELD">
         <attributes>
             <id name="id">
-                <generated-value strategy="AUTO" />
+                <generated-value strategy="IDENTITY" />
             </id>
         </attributes>
     </mapped-superclass>
