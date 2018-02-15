@@ -10,6 +10,10 @@ abstract public class StdUuEntity<ID extends Serializable> extends StdEntity<ID>
 {
     protected UUID uuid;
 
+    public StdUuEntity(UUID uuid) {
+        this.uuid = uuid;
+    }
+
     @Override
     public UUID getUuid()
     {

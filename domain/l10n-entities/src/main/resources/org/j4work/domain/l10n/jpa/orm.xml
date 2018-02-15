@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings
+        xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd"
+        version="2.0">
+
+    <entity class="org.j4work.domain.l10n.entities.L10nContinent" access="FIELD">
+        <attribute-override name="id">
+            <column column-definition="char"/>
+        </attribute-override>
+    </entity>
+
+    <entity class="org.j4work.domain.l10n.entities.L10nCountry" access="FIELD">
+        <attribute-override name="id">
+            <column column-definition="char"/>
+        </attribute-override>
+
+        <attributes>
+            <many-to-one name="continent" />
+        </attributes>
+    </entity>
+
+    <entity class="org.j4work.domain.l10n.entities.L10nLanguage" access="FIELD">
+        <attribute-override name="id">
+            <column column-definition="char"/>
+        </attribute-override>
+    </entity>
+
+    <entity class="org.j4work.domain.l10n.entities.L10nTimezone" access="FIELD">
+        <attribute-override name="id">
+            <column column-definition="char"/>
+        </attribute-override>
+    </entity>
+
+</entity-mappings>

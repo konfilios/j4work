@@ -14,11 +14,10 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>base-entities</module>
         <module>l10n-entities</module>
         <module>l10n-spring4-data-repos</module>
         <module>l10n-spring5-data-repos</module>
-        <module>base-entities</module>
-        <module>base-jpa-mapping</module>
     </modules>
 
 </project>
