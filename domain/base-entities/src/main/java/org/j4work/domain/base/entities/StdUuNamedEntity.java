@@ -17,10 +17,15 @@ abstract public class StdUuNamedEntity<ID extends Serializable> extends StdUuEnt
     }
 
     public StdUuNamedEntity() {
-        this(null);
+        this(null, null);
     }
 
     public StdUuNamedEntity(UUID uuid) {
+        this(uuid, null);
+    }
+
+    public StdUuNamedEntity(UUID uuid, String name) {
         super(uuid);
+        this.name = name;
     }
 }

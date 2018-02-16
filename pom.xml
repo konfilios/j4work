@@ -125,6 +125,11 @@
             </dependency>
             <dependency>
                 <groupId>org.j4work.domain</groupId>
+                <artifactId>base-spring5-data-repos</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.domain</groupId>
                 <artifactId>l10n-entities</artifactId>
                 <version>${j4work.version}</version>
             </dependency>

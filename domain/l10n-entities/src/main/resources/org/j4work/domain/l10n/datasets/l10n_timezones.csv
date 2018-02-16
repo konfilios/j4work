@@ -1,4 +1,4 @@
-id,code,name
+TIMEZONE_ID,TIMEZONE_CODE,TIMEZONE_NAME
 1,Africa/Abidjan,"Greenwich Mean Time"
 2,Africa/Accra,"Ghana Mean Time"
 3,Africa/Addis_Ababa,"Eastern Africa Time"

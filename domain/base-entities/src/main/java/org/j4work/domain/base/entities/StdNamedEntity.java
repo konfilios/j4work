@@ -15,4 +15,11 @@ abstract public class StdNamedEntity<ID extends Serializable> extends StdEntity<
     {
         return name;
     }
+
+    public StdNamedEntity() {
+    }
+
+    public StdNamedEntity(String name) {
+        this.name = name;
+    }
 }

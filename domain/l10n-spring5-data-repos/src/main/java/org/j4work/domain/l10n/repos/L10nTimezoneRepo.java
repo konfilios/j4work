@@ -8,4 +8,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  */
 public interface L10nTimezoneRepo extends PagingAndSortingRepository<L10nTimezone, Short>
 {
+    L10nTimezone findByCode(String code);
 }

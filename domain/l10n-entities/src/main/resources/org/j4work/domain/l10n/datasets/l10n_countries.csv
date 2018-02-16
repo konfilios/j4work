@@ -1,4 +1,4 @@
-id,continentId,name
+COUNTRY_ID,CONTINENT_ID,COUNTRY_NAME
 AD,EU,Andorra
 AE,AS,United Arab Emirates
 AF,AS,Afghanistan

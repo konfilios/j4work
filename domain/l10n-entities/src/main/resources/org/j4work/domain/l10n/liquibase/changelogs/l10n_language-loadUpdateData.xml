@@ -9,6 +9,10 @@
         <!--
         Populate l10n_language data
         -->
-        <loadUpdateData tableName="l10n_language" primaryKey="id" file="org/j4work/domain/l10n/datasets/l10n_languages.csv" />
+        <loadUpdateData tableName="l10n_language" primaryKey="id"
+                        file="org/j4work/domain/l10n/datasets/l10n_languages.csv">
+            <column header="LANGUAGE_ID" name="id" type="STRING" />
+            <column header="LANGUAGE_NAME" name="name" type="STRING" />
+        </loadUpdateData>
     </changeSet>
 </databaseChangeLog>
