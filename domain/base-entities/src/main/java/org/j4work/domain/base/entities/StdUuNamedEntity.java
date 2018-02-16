@@ -16,6 +16,10 @@ abstract public class StdUuNamedEntity<ID extends Serializable> extends StdUuEnt
         return name;
     }
 
+    public StdUuNamedEntity() {
+        this(null);
+    }
+
     public StdUuNamedEntity(UUID uuid) {
         super(uuid);
     }

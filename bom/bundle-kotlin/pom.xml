@@ -15,8 +15,6 @@
     <packaging>pom</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
     </properties>
 
     <dependencies>
@@ -156,45 +154,44 @@
                 <version>${kotlin.1.latest-version}</version>
                 <configuration>
                     <compilerPlugins>
-                        <!-- Or "spring" for the Spring support -->
+                        <plugin>jpa</plugin>
                         <plugin>spring</plugin>
                     </compilerPlugins>
-
-                    <!--<pluginOptions>-->
-                    <!--&lt;!&ndash; Each annotation is placed on its own line &ndash;&gt;-->
-                    <!--<option>all-open:annotation=com.your.Annotation</option>-->
-                    <!--<option>all-open:annotation=com.their.AnotherAnnotation</option>-->
-                    <!--</pluginOptions>-->
                 </configuration>
-                <!--<dependencies>-->
-                    <!--<dependency>-->
-                        <!--<groupId>org.jetbrains.kotlin</groupId>-->
-                        <!--<artifactId>kotlin-maven-allopen</artifactId>-->
-                        <!--<version>${kotlin.1.latest-version}</version>-->
-                    <!--</dependency>-->
-                <!--</dependencies>-->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>${kotlin.1.latest-version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-noarg</artifactId>
+                        <version>${kotlin.1.latest-version}</version>
+                    </dependency>
+                </dependencies>
 
                 <executions>
-                    <execution>
-                        <id>kapt</id>
-                        <goals>
-                            <goal>kapt</goal>
-                        </goals>
-                        <configuration>
-                            <sourceDirs>
-                                <sourceDir>src/main/kotlin</sourceDir>
-                                <sourceDir>src/main/java</sourceDir>
-                            </sourceDirs>
-                            <annotationProcessorPaths>
-                                <!-- Specify your annotation processors here. -->
-                                <annotationProcessorPath>
-                                    <groupId>com.google.dagger</groupId>
-                                    <artifactId>dagger-compiler</artifactId>
-                                    <version>2.11</version>
-                                </annotationProcessorPath>
-                            </annotationProcessorPaths>
-                        </configuration>
-                    </execution>
+                    <!--<execution>-->
+                        <!--<id>kapt</id>-->
+                        <!--<goals>-->
+                            <!--<goal>kapt</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<sourceDirs>-->
+                                <!--&lt;!&ndash;<sourceDir>src/main/kotlin</sourceDir>&ndash;&gt;-->
+                                <!--<sourceDir>src/main/java</sourceDir>-->
+                            <!--</sourceDirs>-->
+                            <!--<annotationProcessorPaths>-->
+                                <!--&lt;!&ndash; Specify your annotation processors here. &ndash;&gt;-->
+                                <!--<annotationProcessorPath>-->
+                                    <!--<groupId>com.google.dagger</groupId>-->
+                                    <!--<artifactId>dagger-compiler</artifactId>-->
+                                    <!--<version>${dagger-compiler.version}</version>-->
+                                <!--</annotationProcessorPath>-->
+                            <!--</annotationProcessorPaths>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
 
                     <execution>
                         <id>compile</id>
@@ -204,7 +201,7 @@
                         </goals>
                         <configuration>
                             <sourceDirs>
-                                <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
+                                <!--<sourceDir>${project.basedir}/src/main/kotlin</sourceDir>-->
                                 <sourceDir>${project.basedir}/src/main/java</sourceDir>
                             </sourceDirs>
                         </configuration>
@@ -218,7 +215,7 @@
                         </goals>
                         <configuration>
                             <sourceDirs>
-                                <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
+                                <!--<sourceDir>${project.basedir}/src/test/kotlin</sourceDir>-->
                                 <sourceDir>${project.basedir}/src/test/java</sourceDir>
                             </sourceDirs>
                         </configuration>
@@ -226,103 +223,22 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <!-- https://github.com/Kotlin/dokka/blob/master/README.md#using-the-maven-plugin -->
+                <groupId>org.jetbrains.dokka</groupId>
+                <artifactId>dokka-maven-plugin</artifactId>
+                <version>${dokka.version}</version>
+                <executions>
+                    <execution>
+                        <phase>pre-site</phase>
+                        <goals>
+                            <goal>dokka</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <!-- https://kotlinlang.org/docs/reference/using-maven.html -->
-                    <groupId>org.jetbrains.kotlin</groupId>
-                    <artifactId>kotlin-maven-plugin</artifactId>
-                    <version>${kotlin.1.latest-version}</version>
-                    <configuration>
-                        <compilerPlugins>
-                            <!-- Or "spring" for the Spring support -->
-                            <plugin>spring</plugin>
-                        </compilerPlugins>
-
-                        <!--<pluginOptions>-->
-                        <!--&lt;!&ndash; Each annotation is placed on its own line &ndash;&gt;-->
-                        <!--<option>all-open:annotation=com.your.Annotation</option>-->
-                        <!--<option>all-open:annotation=com.their.AnotherAnnotation</option>-->
-                        <!--</pluginOptions>-->
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.jetbrains.kotlin</groupId>
-                            <artifactId>kotlin-maven-allopen</artifactId>
-                            <version>${kotlin.1.latest-version}</version>
-                        </dependency>
-                    </dependencies>
-
-                    <executions>
-                        <execution>
-                            <id>kapt</id>
-                            <goals>
-                                <goal>kapt</goal>
-                            </goals>
-                            <configuration>
-                                <sourceDirs>
-                                    <sourceDir>src/main/kotlin</sourceDir>
-                                    <sourceDir>src/main/java</sourceDir>
-                                </sourceDirs>
-                                <annotationProcessorPaths>
-                                    <!-- Specify your annotation processors here. -->
-                                    <annotationProcessorPath>
-                                        <groupId>com.google.dagger</groupId>
-                                        <artifactId>dagger-compiler</artifactId>
-                                        <version>2.11</version>
-                                    </annotationProcessorPath>
-                                </annotationProcessorPaths>
-                            </configuration>
-                        </execution>
-
-                        <execution>
-                            <id>compile</id>
-                            <phase>compile</phase>
-                            <goals>
-                                <goal>compile</goal>
-                            </goals>
-                            <configuration>
-                                <sourceDirs>
-                                    <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
-                                    <sourceDir>${project.basedir}/src/main/java</sourceDir>
-                                </sourceDirs>
-                            </configuration>
-                        </execution>
-
-                        <execution>
-                            <id>test-compile</id>
-                            <phase>test-compile</phase>
-                            <goals>
-                                <goal>test-compile</goal>
-                            </goals>
-                            <configuration>
-                                <sourceDirs>
-                                    <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
-                                    <sourceDir>${project.basedir}/src/test/java</sourceDir>
-                                </sourceDirs>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <!-- https://github.com/Kotlin/dokka/blob/master/README.md#using-the-maven-plugin -->
-                    <groupId>org.jetbrains.dokka</groupId>
-                    <artifactId>dokka-maven-plugin</artifactId>
-                    <version>${dokka.version}</version>
-                    <executions>
-                        <execution>
-                            <phase>pre-site</phase>
-                            <goals>
-                                <goal>dokka</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-            </plugins>
-        </pluginManagement>
     </build>
 
     <repositories>

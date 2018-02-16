@@ -14,6 +14,10 @@ abstract public class StdUuEntity<ID extends Serializable> extends StdEntity<ID>
         this.uuid = uuid;
     }
 
+    public StdUuEntity() {
+        this(null);
+    }
+
     @Override
     public UUID getUuid()
     {
