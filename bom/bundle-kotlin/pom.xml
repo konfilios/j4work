@@ -223,20 +223,20 @@
                 </executions>
             </plugin>
 
-            <plugin>
-                <!-- https://github.com/Kotlin/dokka/blob/master/README.md#using-the-maven-plugin -->
-                <groupId>org.jetbrains.dokka</groupId>
-                <artifactId>dokka-maven-plugin</artifactId>
-                <version>${dokka.version}</version>
-                <executions>
-                    <execution>
-                        <phase>pre-site</phase>
-                        <goals>
-                            <goal>dokka</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--&lt;!&ndash; https://github.com/Kotlin/dokka/blob/master/README.md#using-the-maven-plugin &ndash;&gt;-->
+                <!--<groupId>org.jetbrains.dokka</groupId>-->
+                <!--<artifactId>dokka-maven-plugin</artifactId>-->
+                <!--<version>${dokka.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>pre-site</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>dokka</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
 
         </plugins>
     </build>
