@@ -18,6 +18,10 @@
                 <constraints primaryKey="true" nullable="false" />
             </column>
 
+            <column name="lukey" type="CHAR(2)">
+                <constraints nullable="false" unique="true" />
+            </column>
+
             <column name="continent_id" type="CHAR(2)">
                 <constraints foreignKeyName="l10n_country_continentId_fk" references="l10n_continent(id)" nullable="false" />
             </column>

@@ -12,6 +12,7 @@
         <loadUpdateData tableName="l10n_continent" primaryKey="id"
                         file="org/j4work/domain/l10n/datasets/l10n_continents.csv">
             <column header="CONTINENT_ID" name="id" type="STRING" />
+            <column header="CONTINENT_LUKEY" name="lukey" type="STRING" />
             <column header="CONTINENT_NAME" name="name" type="STRING" />
         </loadUpdateData>
     </changeSet>

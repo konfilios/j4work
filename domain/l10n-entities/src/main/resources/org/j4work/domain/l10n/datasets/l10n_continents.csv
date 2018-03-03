@@ -1,8 +1,8 @@
-CONTINENT_ID,CONTINENT_NAME
-AF,Africa
-AS,Asia
-EU,Europe
-NA,North America
-SA,South America
-OC,Oceania
-AN,Antarctica
+CONTINENT_ID,CONTINENT_LUKEY,CONTINENT_NAME
+AF,AF,Africa
+AS,AS,Asia
+EU,EU,Europe
+NA,NA,North America
+SA,SA,South America
+OC,OC,Oceania
+AN,AN,Antarctica

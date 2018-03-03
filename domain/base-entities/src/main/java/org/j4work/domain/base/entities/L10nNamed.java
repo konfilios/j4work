@@ -1,7 +1,7 @@
 package org.j4work.domain.base.entities;
 
 /**
- * An object with localized names.
+ * An entity with localized human-readable names.
  */
 public interface L10nNamed extends Named {
 
