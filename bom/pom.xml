@@ -26,15 +26,16 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <spring-boot.2.latest.version>2.0.0.RELEASE</spring-boot.2.latest.version>
-        <spring-boot.1.latest.version>1.5.10.RELEASE</spring-boot.1.latest.version>
+        <spring-boot.2.latest.version>2.0.2.RELEASE</spring-boot.2.latest.version>
+        <spring-boot.1.latest.version>1.5.13.RELEASE</spring-boot.1.latest.version>
 
-        <kotlin.1.latest-version>1.2.30</kotlin.1.latest-version>
+        <kotlin.1.latest-version>1.2.41</kotlin.1.latest-version>
+        <dagger-compiler.version>2.14.1</dagger-compiler.version>
+        <kotlin-logging.version>1.5.4</kotlin-logging.version>
+        <dokka.version>0.9.16</dokka.version>
+
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
-        <dagger-compiler.version>2.14.1</dagger-compiler.version>
-        <kotlin-logging.version>1.5.3</kotlin-logging.version>
-        <dokka.version>0.9.15</dokka.version>
     </properties>
 
 </project>
