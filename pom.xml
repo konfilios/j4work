@@ -17,6 +17,7 @@
         <module>kotlin</module>
         <module>spring4</module>
         <module>util</module>
+        <module>java8-ext</module>
     </modules>
 
     <properties>
@@ -169,6 +170,16 @@
             <dependency>
                 <groupId>org.j4work.enums</groupId>
                 <artifactId>core-serialenums</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <!--
+              java8-ext
+              -->
+
+            <dependency>
+                <groupId>org.j4work</groupId>
+                <artifactId>java8-ext</artifactId>
                 <version>${j4work.version}</version>
             </dependency>
 
