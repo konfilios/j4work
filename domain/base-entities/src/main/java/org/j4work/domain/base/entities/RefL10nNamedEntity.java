@@ -5,10 +5,12 @@ import java.util.Map;
 
 /**
  * Standard implementation of entity with i18n names.
- *
+ * <p>
  * Default name equals the name corresponding to the default language.
  */
-abstract public class RefL10nNamedEntity<ID extends Serializable> extends StdEntity<ID> implements L10nNamed {
+abstract public class RefL10nNamedEntity<ID extends Serializable>
+    extends AutoIdEntity<ID>
+    implements L10nNamed {
 
     /**
      * Map of names per language code.
@@ -24,6 +26,6 @@ abstract public class RefL10nNamedEntity<ID extends Serializable> extends StdEnt
     public String toString() {
         return this.getClass() + "{" +
             "name=" + getName() +
-        '}';
+            '}';
     }
 }

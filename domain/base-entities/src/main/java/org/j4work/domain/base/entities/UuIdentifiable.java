@@ -5,8 +5,7 @@ import java.util.UUID;
 /**
  * Uniquely identifiable by uuid.
  */
-public interface UuIdentifiable
-{
+public interface UuIdentifiable {
 
     /**
      * UUID.

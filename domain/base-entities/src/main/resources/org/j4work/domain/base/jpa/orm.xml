@@ -8,22 +8,14 @@
     <mapped-superclass class="org.j4work.domain.base.entities.AbstractEntity"/>
 
     <mapped-superclass class="org.j4work.domain.base.entities.RefEntity" access="FIELD">
-        <attributes>
-            <id name="id" />
-        </attributes>
+
     </mapped-superclass>
 
     <mapped-superclass class="org.j4work.domain.base.entities.RefL10nNamedEntity" access="FIELD">
 
     </mapped-superclass>
 
-    <mapped-superclass class="org.j4work.domain.base.entities.RefNamedEntity" access="FIELD">
-        <attributes>
-            <basic name="name" />
-        </attributes>
-    </mapped-superclass>
-
-    <mapped-superclass class="org.j4work.domain.base.entities.StdEntity" access="FIELD">
+    <mapped-superclass class="org.j4work.domain.base.entities.AutoIdEntity" access="FIELD">
         <attributes>
             <id name="id">
                 <generated-value strategy="IDENTITY" />
@@ -31,13 +23,13 @@
         </attributes>
     </mapped-superclass>
     
-    <mapped-superclass class="org.j4work.domain.base.entities.StdNamedEntity" access="FIELD">
+    <mapped-superclass class="org.j4work.domain.base.entities.AutoIdNamedEntity" access="FIELD">
         <attributes>
             <basic name="name" />
         </attributes>
     </mapped-superclass>
 
-    <mapped-superclass class="org.j4work.domain.base.entities.StdUuEntity" access="FIELD">
+    <mapped-superclass class="org.j4work.domain.base.entities.AutoIdUuEntity" access="FIELD">
         <attributes>
             <basic name="uuid">
                 <column nullable="false" />
@@ -45,7 +37,33 @@
         </attributes>
     </mapped-superclass>
 
-    <mapped-superclass class="org.j4work.domain.base.entities.StdUuNamedEntity" access="FIELD">
+    <mapped-superclass class="org.j4work.domain.base.entities.AutoIdUuNamedEntity" access="FIELD">
+        <attributes>
+            <basic name="name" />
+        </attributes>
+    </mapped-superclass>
+
+    <mapped-superclass class="org.j4work.domain.base.entities.ManualIdEntity" access="FIELD">
+        <attributes>
+            <id name="id" />
+        </attributes>
+    </mapped-superclass>
+
+    <mapped-superclass class="org.j4work.domain.base.entities.ManualIdNamedEntity" access="FIELD">
+        <attributes>
+            <basic name="name" />
+        </attributes>
+    </mapped-superclass>
+
+    <mapped-superclass class="org.j4work.domain.base.entities.ManualIdUuEntity" access="FIELD">
+        <attributes>
+            <basic name="uuid">
+                <column nullable="false" />
+            </basic>
+        </attributes>
+    </mapped-superclass>
+
+    <mapped-superclass class="org.j4work.domain.base.entities.ManualIdUuNamedEntity" access="FIELD">
         <attributes>
             <basic name="name" />
         </attributes>

@@ -5,18 +5,11 @@ import java.io.Serializable;
 /**
  * Reference entity implementation with manually assigned id and lukey.
  */
-abstract public class RefEntity<ID extends Serializable> extends AbstractEntity<ID>
-    implements LukeyIdentifiable
-{
-    protected ID id;
+abstract public class RefEntity<ID extends Serializable>
+    extends ManualIdNamedEntity<ID>
+    implements LukeyIdentifiable {
 
     protected String lukey;
-
-    @Override
-    public ID getId()
-    {
-        return id;
-    }
 
     @Override
     public String getLukey() {
