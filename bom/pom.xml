@@ -26,8 +26,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <spring-boot.2.latest.version>2.0.2.RELEASE</spring-boot.2.latest.version>
-        <spring-boot.1.latest.version>1.5.13.RELEASE</spring-boot.1.latest.version>
+        <spring-boot.2.latest.version>2.0.3.RELEASE</spring-boot.2.latest.version>
+        <spring-boot.1.latest.version>1.5.14.RELEASE</spring-boot.1.latest.version>
 
         <kotlin.1.latest-version>1.2.51</kotlin.1.latest-version>
         <dagger-compiler.version>2.14.1</dagger-compiler.version>
