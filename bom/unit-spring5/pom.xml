@@ -20,7 +20,7 @@
                 <!-- https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-build-systems.html#using-boot-maven-without-a-parent -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.2.latest.version}</version>
+                <version>${j4work.spring-boot-2.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

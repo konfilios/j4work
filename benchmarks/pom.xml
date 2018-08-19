@@ -64,7 +64,7 @@
                 <!--&lt;!&ndash; Import dependency management from Spring Boot &ndash;&gt;-->
                 <!--<groupId>org.springframework.boot</groupId>-->
                 <!--<artifactId>spring-boot-dependencies</artifactId>-->
-                <!--<version>${spring-boot.2.latest.version}</version>-->
+                <!--<version>${j4work.spring-boot-2.version}</version>-->
                 <!--<type>pom</type>-->
                 <!--<scope>import</scope>-->
             <!--</dependency>-->

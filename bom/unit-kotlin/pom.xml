@@ -44,31 +44,31 @@
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib-jdk8</artifactId>
-                <version>${kotlin.1.latest-version}</version>
+                <version>${j4work.kotlin-1.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib-jdk7</artifactId>
-                <version>${kotlin.1.latest-version}</version>
+                <version>${j4work.kotlin-1.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib</artifactId>
-                <version>${kotlin.1.latest-version}</version>
+                <version>${j4work.kotlin-1.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-reflect</artifactId>
-                <version>${kotlin.1.latest-version}</version>
+                <version>${j4work.kotlin-1.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-test-junit</artifactId>
-                <version>${kotlin.1.latest-version}</version>
+                <version>${j4work.kotlin-1.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>junit</groupId>
@@ -90,7 +90,7 @@
                     <!-- https://kotlinlang.org/docs/reference/using-maven.html -->
                     <groupId>org.jetbrains.kotlin</groupId>
                     <artifactId>kotlin-maven-plugin</artifactId>
-                    <version>${kotlin.1.latest-version}</version>
+                    <version>${j4work.kotlin-1.version}</version>
                     <configuration>
                         <compilerPlugins>
                             <plugin>jpa</plugin>
@@ -101,12 +101,12 @@
                         <dependency>
                             <groupId>org.jetbrains.kotlin</groupId>
                             <artifactId>kotlin-maven-allopen</artifactId>
-                            <version>${kotlin.1.latest-version}</version>
+                            <version>${j4work.kotlin-1.version}</version>
                         </dependency>
                         <dependency>
                             <groupId>org.jetbrains.kotlin</groupId>
                             <artifactId>kotlin-maven-noarg</artifactId>
-                            <version>${kotlin.1.latest-version}</version>
+                            <version>${j4work.kotlin-1.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>

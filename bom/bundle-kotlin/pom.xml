@@ -79,7 +79,7 @@
                 <!-- https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-build-systems.html#using-boot-maven-without-a-parent -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.2.latest.version}</version>
+                <version>${j4work.spring-boot-2.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -151,7 +151,7 @@
                 <!-- https://kotlinlang.org/docs/reference/using-maven.html -->
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
-                <version>${kotlin.1.latest-version}</version>
+                <version>${j4work.kotlin-1.version}</version>
                 <configuration>
                     <compilerPlugins>
                         <plugin>jpa</plugin>
@@ -162,12 +162,12 @@
                     <dependency>
                         <groupId>org.jetbrains.kotlin</groupId>
                         <artifactId>kotlin-maven-allopen</artifactId>
-                        <version>${kotlin.1.latest-version}</version>
+                        <version>${j4work.kotlin-1.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.jetbrains.kotlin</groupId>
                         <artifactId>kotlin-maven-noarg</artifactId>
-                        <version>${kotlin.1.latest-version}</version>
+                        <version>${j4work.kotlin-1.version}</version>
                     </dependency>
                 </dependencies>
 
