@@ -26,13 +26,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <j4work.spring-boot-2.version>2.0.4.RELEASE</j4work.spring-boot-2.version>
-        <j4work.spring-boot-1.version>1.5.15.RELEASE</j4work.spring-boot-1.version>
+        <j4work.spring-boot-2.version>2.0.6.RELEASE</j4work.spring-boot-2.version>
+        <j4work.spring-boot-1.version>1.5.17.RELEASE</j4work.spring-boot-1.version>
 
-        <j4work.kotlin-1.version>1.2.60</j4work.kotlin-1.version>
-        <dagger-compiler.version>2.14.1</dagger-compiler.version>
-        <kotlin-logging.version>1.5.4</kotlin-logging.version>
-        <dokka.version>0.9.16</dokka.version>
+        <j4work.kotlin-1.version>1.2.71</j4work.kotlin-1.version>
+        <dagger-compiler.version>2.18</dagger-compiler.version>
+        <kotlin-logging.version>1.6.10</kotlin-logging.version>
+        <dokka.version>0.9.17</dokka.version>
 
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
