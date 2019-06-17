@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>l10n-entities</artifactId>
-    <name>domain/l10n/entities</name>
+    <name>j4work/domain/l10n/entities</name>
 
     <dependencies>
         <dependency>

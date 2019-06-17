@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>adapters-jackson2-serdeser</artifactId>
-    <name>enums/adapters/jackson2-serdeser</name>
+    <name>j4work/enums/adapters/jackson2-serdeser</name>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->

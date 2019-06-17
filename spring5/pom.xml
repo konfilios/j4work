@@ -11,6 +11,7 @@
 
     <groupId>org.j4work.spring5</groupId>
     <artifactId>spring5</artifactId>
+    <name>j4work/spring5</name>
     <packaging>pom</packaging>
 
     <modules>

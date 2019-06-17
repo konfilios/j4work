@@ -11,6 +11,7 @@
 
     <groupId>org.j4work.domain</groupId>
     <artifactId>domain</artifactId>
+    <name>j4work/domain</name>
     <packaging>pom</packaging>
 
     <modules>

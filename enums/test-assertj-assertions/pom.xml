@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>test-assertj-assertions</artifactId>
-    <name>enums/test/assertions</name>
+    <name>j4work/enums/test/assertions</name>
 
     <dependencies>
         <dependency>

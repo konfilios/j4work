@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>unit-browsermob</artifactId>
-    <name>bom/unit/browsermob</name>
+    <name>j4work/bom/unit/browsermob</name>
     <packaging>pom</packaging>
 
     <properties>

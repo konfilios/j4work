@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>adapters-spring4-converter</artifactId>
-    <name>enums/adapters/spring4-converter</name>
+    <name>j4work/enums/adapters/spring4-converter</name>
 
 
     <dependencies>

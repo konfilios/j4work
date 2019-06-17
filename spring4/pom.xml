@@ -11,10 +11,10 @@
 
     <groupId>org.j4work.spring4</groupId>
     <artifactId>spring4</artifactId>
+    <name>j4work/spring4</name>
     <packaging>pom</packaging>
 
     <modules>
-        <module>web-json-auth</module>
         <module>web-error-handling</module>
     </modules>
 

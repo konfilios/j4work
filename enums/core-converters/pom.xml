@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>core-converters</artifactId>
-    <name>enums/core/converters</name>
+    <name>j4work/enums/core/converters</name>
 
     <dependencies>
         <dependency>

@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>core-api</artifactId>
-    <name>enums/core/api</name>
+    <name>j4work/enums/core/api</name>
 
     <dependencies>
         <dependency>

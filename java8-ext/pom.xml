@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>java8-ext</artifactId>
+    <name>j4work/java8-ext</name>
 
     <properties>
         <j4work.bom.version>1.1.0-SNAPSHOT</j4work.bom.version>

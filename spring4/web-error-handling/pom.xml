@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>web-error-handling</artifactId>
-    <name>spring4/web/error-handling</name>
+    <name>j4work/spring4/web/error-handling</name>
 
     <dependencies>
         <dependency>

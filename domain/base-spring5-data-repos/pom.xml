@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>base-spring5-data-repos</artifactId>
-    <name>domain/base/spring5-data-repos</name>
+    <name>j4work/domain/base/spring5-data-repos</name>
 
     <dependencies>
         <dependency>

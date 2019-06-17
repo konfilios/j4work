@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>adapters-hibernate4-type</artifactId>
-    <name>enums/adapters/hibernate4-type</name>
+    <name>j4work/enums/adapters/hibernate4-type</name>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
