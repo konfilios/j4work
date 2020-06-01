@@ -6,7 +6,7 @@
     <parent>
         <artifactId>j4work</artifactId>
         <groupId>org.j4work</groupId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>1.2.0-SNAPSHOT</version>
     </parent>
 
     <groupId>org.j4work.domain</groupId>
@@ -17,7 +17,6 @@
         <module>base-entities</module>
         <module>base-spring5-data-repos</module>
         <module>l10n-entities</module>
-        <module>l10n-spring4-data-repos</module>
         <module>l10n-spring5-data-repos</module>
     </modules>
 

@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.j4work</groupId>
         <artifactId>j4work</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>1.2.0-SNAPSHOT</version>
     </parent>
 
     <groupId>org.j4work.util</groupId>
@@ -23,17 +23,10 @@
     <properties>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
-        <j4work.bom.version>1.1.0-SNAPSHOT</j4work.bom.version>
+        <j4work.bom.version>1.2.0-SNAPSHOT</j4work.bom.version>
     </properties>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -58,7 +51,7 @@
             <dependency>
                 <!-- https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-build-systems.html#using-boot-maven-without-a-parent -->
                 <groupId>org.j4work.bom</groupId>
-                <artifactId>unit-spring4</artifactId>
+                <artifactId>unit-spring5</artifactId>
                 <version>${j4work.bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>

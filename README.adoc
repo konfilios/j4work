@@ -2,6 +2,8 @@
 
 Java and Kotlin tools for the working professional.
 
+Minimum java version: 11
+
 == Projects
 
 === benchmarks
@@ -14,6 +16,6 @@ Java and Kotlin tools for the working professional.
 
 === kotlin
 
-=== spring4
+=== spring5
 
 === util
