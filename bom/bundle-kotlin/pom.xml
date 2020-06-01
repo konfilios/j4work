@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>bundle-kotlin</artifactId>
-    <name>bom/bundle/kotlin</name>
+    <name>j4work/bom/bundle/kotlin</name>
     <packaging>pom</packaging>
 
     <properties>

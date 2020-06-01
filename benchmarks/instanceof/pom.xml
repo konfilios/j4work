@@ -10,7 +10,7 @@
     <artifactId>instanceof</artifactId>
     <packaging>jar</packaging>
 
-    <name>benchmarks/instanceof</name>
+    <name>j4work/benchmarks/instanceof</name>
 
     <properties>
         <!--

@@ -12,6 +12,7 @@
 
     <groupId>org.j4work.benchmarks</groupId>
     <artifactId>benchmarks</artifactId>
+    <name>j4work/benchmarks</name>
     <packaging>pom</packaging>
 
     <modules>

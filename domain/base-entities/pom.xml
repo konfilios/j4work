@@ -10,5 +10,5 @@
     </parent>
 
     <artifactId>base-entities</artifactId>
-    <name>domain/base/entities</name>
+    <name>j4work/domain/base/entities</name>
 </project>

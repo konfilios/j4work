@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>unit-kotlin</artifactId>
-    <name>bom/unit/kotlin</name>
+    <name>j4work/bom/unit/kotlin</name>
     <packaging>pom</packaging>
 
     <dependencyManagement>

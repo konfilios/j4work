@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>unit-apache-poi</artifactId>
-    <name>bom/unit/apache-poi</name>
+    <name>j4work/bom/unit/apache-poi</name>
     <packaging>pom</packaging>
 
     <properties>

@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>spring5-web-json-auth</artifactId>
-    <name>spring5/web/json-auth</name>
+    <name>j4work/spring5/web/json-auth</name>
 
     <dependencies>
         <dependency>

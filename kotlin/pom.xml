@@ -12,6 +12,7 @@
 
     <groupId>org.j4work.kotlin</groupId>
     <artifactId>kotlin</artifactId>
+    <name>j4work/kotlin</name>
     <packaging>pom</packaging>
 
 

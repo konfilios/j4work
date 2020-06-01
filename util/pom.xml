@@ -12,6 +12,7 @@
 
     <groupId>org.j4work.util</groupId>
     <artifactId>util</artifactId>
+    <name>j4work/util</name>
     <packaging>pom</packaging>
 
     <modules>

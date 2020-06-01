@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>unit-spring5</artifactId>
-    <name>bom/unit/spring5</name>
+    <name>j4work/bom/unit/spring5</name>
     <packaging>pom</packaging>
 
     <dependencyManagement>
