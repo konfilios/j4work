@@ -1,21 +1,38 @@
 = j4work
 
-Java and Kotlin tools for the working professional.
+JVM tools for the working professional.
 
 Minimum java version: 11
 
-== Projects
+== Project structure
 
-=== benchmarks
+|===
+|Module |Description
 
-=== bom
+| *benchmarks*
+| JMH based microbenchmarks
 
-=== domain
+| benchmarks/instanceof
+| Benchmark Java's type hierarchy query methods
 
-=== enums
+| **bom**
+| Convenience Bill Of Material modules for bootstrapping projects
 
-=== kotlin
+| *domain*
+| Base classes for building Domain Objects (entities) with standard features
+such as id, uuid, lookup keys, names, etc.
 
-=== spring5
+| *enums*
+| Java Enum serialization/deserialization framework
 
-=== util
+| *spring5*
+| Reusable spring 5 components
+
+| *java*
+| Common, generic utilities used by other modules
+
+| *java/ext-java*
+| Extensions to standard library APIs introduced in Java 8
+|===
+
+

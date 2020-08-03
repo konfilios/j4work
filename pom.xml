@@ -16,8 +16,7 @@
         <module>enums</module>
         <module>kotlin</module>
         <module>spring5</module>
-        <module>util</module>
-        <module>java8-ext</module>
+        <module>java</module>
     </modules>
 
     <properties>
@@ -25,6 +24,22 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <j4work.version>1.2.0-SNAPSHOT</j4work.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
+        <j4work.spring-boot-2.version>2.3.2.RELEASE</j4work.spring-boot-2.version>
+
+        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib -->
+        <j4work.kotlin-1.version>1.3.72</j4work.kotlin-1.version>
+        <!-- https://mvnrepository.com/artifact/com.google.dagger/dagger-compiler -->
+        <dagger-compiler.version>2.28</dagger-compiler.version>
+        <!-- https://mvnrepository.com/artifact/io.github.microutils/kotlin-logging -->
+        <kotlin-logging.version>1.7.9</kotlin-logging.version>
+        <dokka.version>0.9.17</dokka.version>
+
+        <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
+        <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
     </properties>
 
     <dependencies>
@@ -42,6 +57,13 @@
             <version>1.0</version>
             <scope>provided</scope>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${j4work.spring-boot-2.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -95,7 +117,6 @@
     </build>
 
     <dependencyManagement>
-
 
         <dependencies>
             <!--
@@ -170,14 +191,38 @@
             </dependency>
 
             <!--
-              java8-ext
-              -->
-
+             kotlin
+             -->
             <dependency>
-                <groupId>org.j4work</groupId>
-                <artifactId>java8-ext</artifactId>
+                <groupId>org.j4work.kotlin</groupId>
+                <artifactId>kotlin-ext-guava</artifactId>
                 <version>${j4work.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.j4work.kotlin</groupId>
+                <artifactId>kotlin-ext-java</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.kotlin</groupId>
+                <artifactId>kotlin-ext-kotlin</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.kotlin</groupId>
+                <artifactId>kotlin-ext-poi</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.kotlin</groupId>
+                <artifactId>kotlin-ext-util</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
 
             <!--
               spring5
@@ -190,17 +235,23 @@
             </dependency>
 
             <!--
-              Util
+              java
               -->
             <dependency>
-                <groupId>org.j4work.util</groupId>
+                <groupId>org.j4work.java</groupId>
                 <artifactId>classutils-core</artifactId>
                 <version>${j4work.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.j4work.util</groupId>
+                <groupId>org.j4work.java</groupId>
                 <artifactId>datastructures</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.j4work.java</groupId>
+                <artifactId>java-ext-java</artifactId>
                 <version>${j4work.version}</version>
             </dependency>
         </dependencies>

@@ -91,30 +91,6 @@
                 <scope>import</scope>
             </dependency>
 
-            <dependency>
-                <groupId>org.j4work.bom</groupId>
-                <artifactId>unit-apache-poi</artifactId>
-                <version>${j4work.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.j4work.bom</groupId>
-                <artifactId>unit-selenium</artifactId>
-                <version>${j4work.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.j4work.bom</groupId>
-                <artifactId>unit-browsermob</artifactId>
-                <version>${j4work.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
             <!-- Manual list -->
             <dependency>
                 <groupId>org.apache.tika</groupId>
@@ -134,12 +110,6 @@
                 <groupId>org.jsoup</groupId>
                 <artifactId>jsoup</artifactId>
                 <version>1.10.3</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>28.1-jre</version>
             </dependency>
 
         </dependencies>
@@ -172,27 +142,6 @@
                 </dependencies>
 
                 <executions>
-                    <!--<execution>-->
-                        <!--<id>kapt</id>-->
-                        <!--<goals>-->
-                            <!--<goal>kapt</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<sourceDirs>-->
-                                <!--&lt;!&ndash;<sourceDir>src/main/kotlin</sourceDir>&ndash;&gt;-->
-                                <!--<sourceDir>src/main/java</sourceDir>-->
-                            <!--</sourceDirs>-->
-                            <!--<annotationProcessorPaths>-->
-                                <!--&lt;!&ndash; Specify your annotation processors here. &ndash;&gt;-->
-                                <!--<annotationProcessorPath>-->
-                                    <!--<groupId>com.google.dagger</groupId>-->
-                                    <!--<artifactId>dagger-compiler</artifactId>-->
-                                    <!--<version>${dagger-compiler.version}</version>-->
-                                <!--</annotationProcessorPath>-->
-                            <!--</annotationProcessorPaths>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-
                     <execution>
                         <id>compile</id>
                         <phase>compile</phase>
@@ -241,39 +190,11 @@
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <url>http://repo.spring.io/milestone</url>
-        </repository>
-    </repositories>
-    <!--<repositories>-->
-    <!--<repository>-->
-    <!--<id>spring-snapshots</id>-->
-    <!--<url>http://repo.spring.io/snapshot</url>-->
-    <!--<snapshots>-->
-    <!--<enabled>true</enabled>-->
-    <!--</snapshots>-->
-    <!--</repository>-->
-    <!--<repository>-->
-    <!--<id>spring-milestones</id>-->
-    <!--<url>http://repo.spring.io/milestone</url>-->
-    <!--</repository>-->
-    <!--</repositories>-->
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>spring-milestones</id>-->
+<!--            <url>http://repo.spring.io/milestone</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
-    <!--<pluginRepositories>-->
-    <!--<pluginRepository>-->
-    <!--<id>jcenter</id>-->
-    <!--<name>JCenter</name>-->
-    <!--<url>https://jcenter.bintray.com/</url>-->
-    <!--</pluginRepository>-->
-    <!--<pluginRepository>-->
-    <!--<id>spring-snapshots</id>-->
-    <!--<url>http://repo.spring.io/snapshot</url>-->
-    <!--</pluginRepository>-->
-    <!--<pluginRepository>-->
-    <!--<id>spring-milestones</id>-->
-    <!--<url>http://repo.spring.io/milestone</url>-->
-    <!--</pluginRepository>-->
-    <!--</pluginRepositories>-->
 </project>

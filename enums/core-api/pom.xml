@@ -14,7 +14,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.j4work.util</groupId>
+            <groupId>org.j4work.java</groupId>
             <artifactId>classutils-core</artifactId>
         </dependency>
     </dependencies>
