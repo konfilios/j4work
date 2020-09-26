@@ -16,26 +16,33 @@ import java.io.IOException;
 
 /**
  * Responds to GET /login.
- *
+ * <p>
  * If the user is authenticated, then a dto produced by loginDtoProducer is returned as response body.
  * If not, then a 404 Not Found is returned.
  */
-public class JsonLoginGetAuthenticationFilter extends GenericFilterBean
-{
+public class JsonLoginGetAuthenticationFilter extends GenericFilterBean {
+
     final private RequestMatcher requestMatcher;
 
     final private JsonLoginDtoProducer loginDtoProducer;
 
-    public JsonLoginGetAuthenticationFilter(RequestMatcher requestMatcher, JsonLoginDtoProducer loginDtoProducer)
-    {
+    private final ObjectMapper objectMapper;
+
+    public JsonLoginGetAuthenticationFilter(
+        RequestMatcher requestMatcher,
+        JsonLoginDtoProducer loginDtoProducer,
+        ObjectMapper objectMapper
+    ) {
         this.requestMatcher = requestMatcher;
         this.loginDtoProducer = loginDtoProducer;
+        this.objectMapper = objectMapper;
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
-        throws IOException, ServletException
-    {
+    public void doFilter(
+        ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain
+    )
+        throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
 
@@ -44,7 +51,10 @@ public class JsonLoginGetAuthenticationFilter extends GenericFilterBean
 
             if (auth != null && auth.isAuthenticated()) {
                 resp.getWriter().write(
-                    new ObjectMapper().writeValueAsString(loginDtoProducer.produce(req, resp, auth)));
+                    objectMapper.writeValueAsString(
+                        loginDtoProducer.produce(req, resp, auth)
+                    )
+                );
                 resp.addHeader("Content-Type", req.getHeader("Content-Type"));
             } else {
                 resp.sendError(HttpServletResponse.SC_NOT_FOUND, "You are not logged in.");

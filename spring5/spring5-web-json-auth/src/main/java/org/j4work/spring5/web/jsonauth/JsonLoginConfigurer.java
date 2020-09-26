@@ -1,5 +1,6 @@
 package org.j4work.spring5.web.jsonauth;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.config.annotation.web.HttpSecurityBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer;
@@ -72,10 +73,11 @@ public final class JsonLoginConfigurer<H extends HttpSecurityBuilder<H>> extends
      * Creates a new instance
      *
      * @see HttpSecurity#formLogin()
+     * @param objectMapper
      */
-    public JsonLoginConfigurer()
+    public JsonLoginConfigurer(ObjectMapper objectMapper)
     {
-        super(new JsonLoginCreateAuthenticationFilter(), null);
+        super(new JsonLoginCreateAuthenticationFilter(objectMapper), null);
     }
 
     /* (non-Javadoc)

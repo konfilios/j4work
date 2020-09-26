@@ -10,45 +10,72 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * .
+ * Configuration login with JSON request and response payloads.
  */
 public class JsonLogin
 {
     static private final Log logger = LogFactory.getLog(JsonLogin.class);
 
-    static public HttpSecurity configure(HttpSecurity http, String loginUri)
+    /**
+     * Configure using a new objectmapper.
+     */
+    static public HttpSecurity configure(
+        HttpSecurity http, String loginUri
+    )
+        throws Exception {
+        return configure(http, loginUri, new ObjectMapper());
+    }
+
+    /**
+     * Configure using an existing objectmapper.
+     */
+    static public HttpSecurity configure(
+        HttpSecurity http, String loginUri, ObjectMapper objectMapper
+    )
         throws Exception
     {
-        if (logger.isDebugEnabled())
-            logger.debug("Configuring JSON login on " + loginUri);
+
+        logger.debug("Configuring JSON login on " + loginUri);
 
         JsonLoginDtoProducer loginDtoProducer = (req, resp, auth) -> auth.getPrincipal();
         // @formatter:off
         return http
+            //
             // Unauthorized - Prompt for login
+            //
             .exceptionHandling()
                 .authenticationEntryPoint((req, resp, e)->resp.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage()))
 //                .accessDeniedHandler((req, resp, e)->resp.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized: " + e.getMessage()))
                 .and()
+
+            //
             // Logging in
-            .apply(new JsonLoginConfigurer<>())
+            //
+            .apply(new JsonLoginConfigurer<>(objectMapper))
                 .loginPage(loginUri)
                 .failureHandler((req, resp, e) -> resp.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage()))
                 .successHandler((req, resp, auth) -> {
-                    resp.getWriter().write(new ObjectMapper().writeValueAsString(loginDtoProducer.produce(req, resp, auth)));
+                    resp.getWriter().write(objectMapper.writeValueAsString(loginDtoProducer.produce(req, resp, auth)));
                     resp.addHeader("Content-Type", req.getHeader("Content-Type"));
                 })
                 .and()
+
+            //
             // Logging out
+            //
             .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher(loginUri, "DELETE"))
                 .logoutSuccessHandler((req, resp, auth) -> resp.setStatus(HttpServletResponse.SC_NO_CONTENT))
                 .and()
-            // Install filter LogoutFilter
+
+            //
+            // Install before LogoutFilter
+            //
             .addFilterBefore(
                 new JsonLoginGetAuthenticationFilter(
                     new AntPathRequestMatcher(loginUri, "GET"),
-                    loginDtoProducer
+                    loginDtoProducer,
+                    objectMapper
                 ),
                 LogoutFilter.class
             )

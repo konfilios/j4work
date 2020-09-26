@@ -18,6 +18,13 @@ import java.util.logging.Logger;
  */
 public class JsonLoginCreateAuthenticationFilter extends UsernamePasswordAuthenticationFilter
 {
+
+    private final ObjectMapper objectMapper;
+
+    public JsonLoginCreateAuthenticationFilter(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
     {
@@ -28,7 +35,7 @@ public class JsonLoginCreateAuthenticationFilter extends UsernamePasswordAuthent
         // JSON-Decode request body and retrieve LoginDto.
         JsonLoginCreateCmd jsonLoginCreateCmd;
         try {
-            jsonLoginCreateCmd = new ObjectMapper().readValue(request.getInputStream(), JsonLoginCreateCmd.class);
+            jsonLoginCreateCmd = objectMapper.readValue(request.getInputStream(), JsonLoginCreateCmd.class);
         } catch (IOException e) {
 //            e.printStackTrace();
             Logger.getLogger(JsonLoginCreateAuthenticationFilter.class.getName()).log(Level.SEVERE, null, e);
