@@ -6,7 +6,7 @@ package org.j4work.domain.base.entities;
 public interface Named
 {
     /**
-     * Name.
+     * Name of entity.
      */
     String getName();
 }

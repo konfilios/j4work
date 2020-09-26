@@ -20,6 +20,14 @@ abstract public class AutoIdUuEntity<ID extends Serializable>
     protected AutoIdUuEntity() {
     }
 
+    /**
+     * Special case for records with hand-picked ids.
+     */
+    protected AutoIdUuEntity(ID id, UUID uuid) {
+        super(id);
+        this.uuid = uuid;
+    }
+
     public AutoIdUuEntity(UUID uuid) {
         this.uuid = uuid;
     }

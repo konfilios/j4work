@@ -11,6 +11,14 @@ abstract public class RefEntity<ID extends Serializable>
 
     protected String lukey;
 
+    public RefEntity() {
+    }
+
+    public RefEntity(ID id, String name, String lukey) {
+        super(id, name);
+        this.lukey = lukey;
+    }
+
     @Override
     public String getLukey() {
         return lukey;

@@ -8,5 +8,9 @@ import java.io.Serializable;
  * @param <ID>
  */
 public interface Identifiable<ID extends Serializable> {
+
+    /**
+     * Unique identifier.
+     */
     ID getId();
 }

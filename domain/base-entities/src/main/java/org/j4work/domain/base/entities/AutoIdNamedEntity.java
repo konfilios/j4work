@@ -19,6 +19,14 @@ abstract public class AutoIdNamedEntity<ID extends Serializable>
     protected AutoIdNamedEntity() {
     }
 
+    /**
+     * Special case for records with hand-picked ids.
+     */
+    protected AutoIdNamedEntity(ID id, String name) {
+        super(id);
+        this.name = name;
+    }
+
     public AutoIdNamedEntity(String name) {
         this.name = name;
     }

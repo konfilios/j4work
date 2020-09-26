@@ -18,6 +18,13 @@ abstract public class AutoIdEntity<ID extends Serializable>
     protected AutoIdEntity() {
     }
 
+    /**
+     * Special case for records with hand-picked ids.
+     */
+    protected AutoIdEntity(ID id) {
+        this.id = id;
+    }
+
     @Override
     public ID getId() {
         return id;

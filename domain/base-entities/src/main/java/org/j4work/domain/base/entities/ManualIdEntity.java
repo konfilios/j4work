@@ -18,6 +18,9 @@ abstract public class ManualIdEntity<ID extends Serializable>
     protected ManualIdEntity() {
     }
 
+    /**
+     * Use this constructor when is is known.
+     */
     public ManualIdEntity(ID id) {
         this.id = id;
     }

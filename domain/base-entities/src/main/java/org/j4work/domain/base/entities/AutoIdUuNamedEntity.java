@@ -20,6 +20,14 @@ abstract public class AutoIdUuNamedEntity<ID extends Serializable>
     protected AutoIdUuNamedEntity() {
     }
 
+    /**
+     * Special case for records with hand-picked ids.
+     */
+    protected AutoIdUuNamedEntity(ID id, UUID uuid, String name) {
+        super(id, uuid);
+        this.name = name;
+    }
+
     public AutoIdUuNamedEntity(UUID uuid, String name) {
         super(uuid);
         this.name = name;
