@@ -7,7 +7,7 @@ import java.io.Serializable;
  *
  * @param <ID>
  */
-public interface Identifiable<ID extends Serializable> {
+public interface Identifiable<ID extends Serializable> extends Serializable {
 
     /**
      * Unique identifier.
