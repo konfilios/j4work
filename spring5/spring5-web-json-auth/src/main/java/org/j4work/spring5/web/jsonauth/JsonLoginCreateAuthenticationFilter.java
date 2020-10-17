@@ -9,15 +9,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.Override;import java.lang.RuntimeException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  * Create a login using JSON.
  */
-public class JsonLoginCreateAuthenticationFilter extends UsernamePasswordAuthenticationFilter
-{
+public class JsonLoginCreateAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     private final ObjectMapper objectMapper;
 
@@ -26,19 +24,23 @@ public class JsonLoginCreateAuthenticationFilter extends UsernamePasswordAuthent
     }
 
     @Override
-    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
-    {
+    public Authentication attemptAuthentication(
+        HttpServletRequest request, HttpServletResponse response
+    ) {
         if (!request.getMethod().equals("PUT")) {
-            throw new AuthenticationServiceException("Authentication method not supported: " + request.getMethod());
+            throw new AuthenticationServiceException(
+                "Authentication method not supported: " + request.getMethod());
         }
 
         // JSON-Decode request body and retrieve LoginDto.
         JsonLoginCreateCmd jsonLoginCreateCmd;
         try {
-            jsonLoginCreateCmd = objectMapper.readValue(request.getInputStream(), JsonLoginCreateCmd.class);
+            jsonLoginCreateCmd = objectMapper.readValue(request.getInputStream(),
+                JsonLoginCreateCmd.class);
         } catch (IOException e) {
 //            e.printStackTrace();
-            Logger.getLogger(JsonLoginCreateAuthenticationFilter.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(JsonLoginCreateAuthenticationFilter.class.getName()).log(Level.SEVERE,
+                null, e);
             throw new RuntimeException(e);
 //            return null;
         }

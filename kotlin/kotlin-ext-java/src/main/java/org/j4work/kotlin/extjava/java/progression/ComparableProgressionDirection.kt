@@ -30,7 +30,7 @@ enum class ComparableProgressionDirection {
     /**
      * Return opposite direction
      */
-    abstract fun opposite() : ComparableProgressionDirection
+    abstract fun opposite(): ComparableProgressionDirection
 
     /**
      * Does value exceed limit in the direction we are pointing?
@@ -46,6 +46,7 @@ enum class ComparableProgressionDirection {
             } else {
                 throw IllegalArgumentException("A step of '0' does produces neither ascending nor descending order")
             }
+
         fun ofStep(step: Long) =
             if (step > 0) {
                 ASC

@@ -3,8 +3,8 @@ package org.j4work.kotlin.utils.rfm
 import org.apache.commons.math3.stat.descriptive.StatisticalSummary
 
 internal class CategoryBuilderContainer(
-    val itemCount : Int,
-    val categoryCount : Int
+    val itemCount: Int,
+    val categoryCount: Int
 ) {
     val categoriesStats = mutableMapOf<Int, StatisticalSummary>()
 
@@ -14,7 +14,7 @@ internal class CategoryBuilderContainer(
             firstItemOrd = 0
         )
 
-    fun commitCategoryBuilder(categoryBuilder: CategoryBuilder) : CategoryBuilder {
+    fun commitCategoryBuilder(categoryBuilder: CategoryBuilder): CategoryBuilder {
         if (categoryBuilder.summaryStats.n > 0) {
             finalizeCat(categoryBuilder)
 
@@ -29,7 +29,7 @@ internal class CategoryBuilderContainer(
         return categoryBuilder
     }
 
-    private fun createCategoryBuilder(categoryOrd: Int, firstItemOrd : Int) : CategoryBuilder {
+    private fun createCategoryBuilder(categoryOrd: Int, firstItemOrd: Int): CategoryBuilder {
         return CategoryBuilder(
             categoryOrd = categoryOrd,
             firstItemOrd = firstItemOrd,

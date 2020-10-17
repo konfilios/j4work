@@ -7,7 +7,7 @@ import javax.annotation.Nullable;
 
 /**
  * Converts enums exactly as java language does by default.
- *
+ * <p>
  * For each enum constant:
  * 1. Its ordinal is used as the numeric id
  * 2. Its name is used as the string id
@@ -26,17 +26,17 @@ public class StandardJavaEnumConverter<E extends Enum<E>> implements EnumConvert
     @Override
     public boolean canConvert(@Nonnull Class otherClass) {
         return String.class == otherClass
-            ||  Number.class.isAssignableFrom(otherClass);
+            || Number.class.isAssignableFrom(otherClass);
     }
 
     @Nullable
     @Override
     public E valueOf(@Nonnull Object id) {
         if (id instanceof Number) {
-            return enumConstants[((Number)id).intValue()];
+            return enumConstants[((Number) id).intValue()];
 
         } else if (id instanceof String) {
-            return Enum.valueOf(enumClass, (String)id);
+            return Enum.valueOf(enumClass, (String) id);
 
         } else {
             return null;

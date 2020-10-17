@@ -9,10 +9,9 @@ import java.util.TreeSet;
 /**
  * Prints csv lists of l10n entities.
  */
-class CsvPrinter
-{
-    private static void printIsoCountryCodes(PrintStream out)
-    {
+class CsvPrinter {
+
+    private static void printIsoCountryCodes(PrintStream out) {
         int maxIdLength = 0;
         int maxNameLength = 0;
         int count = 0;
@@ -42,8 +41,7 @@ class CsvPrinter
             " name=" + maxNameLength + " chars");
     }
 
-    private static void printIsoLanguageCodes(PrintStream out)
-    {
+    private static void printIsoLanguageCodes(PrintStream out) {
         int maxIdLength = 0;
         int maxNameLength = 0;
         int count = 0;
@@ -74,8 +72,7 @@ class CsvPrinter
             " name=" + maxNameLength + " chars");
     }
 
-    private static void printTimezoneIds(PrintStream out)
-    {
+    private static void printTimezoneIds(PrintStream out) {
         int maxCodeLength = 0;
         int maxNameLength = 0;
         int count = 0;
@@ -106,8 +103,7 @@ class CsvPrinter
             " name=" + maxNameLength + " chars");
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         printIsoCountryCodes(System.out);
 
         printIsoLanguageCodes(System.out);

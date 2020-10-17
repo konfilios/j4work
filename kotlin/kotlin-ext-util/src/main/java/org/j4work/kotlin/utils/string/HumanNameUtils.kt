@@ -7,7 +7,7 @@ object HumanNameUtils {
     val REGEX_LEADING_WHITESPACE = Regex("^\\s")
     val REGEX_TRAILING_WHITESPACE = Regex("\\s$")
 
-    fun highlightSurroundingWhitespace(s : String) =
+    fun highlightSurroundingWhitespace(s: String) =
         s
             .replace(REGEX_LEADING_WHITESPACE, "\\$")
             .replace(REGEX_TRAILING_WHITESPACE, "\\$")

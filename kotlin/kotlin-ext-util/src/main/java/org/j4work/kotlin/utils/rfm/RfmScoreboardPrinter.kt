@@ -32,7 +32,7 @@ object RfmScoreboardPrinter {
     private fun printCardinalities(
         title: String,
         stats: Map<Int, StatisticalSummary>,
-        totalPopulation : Int
+        totalPopulation: Int
     ) {
         System.out.println()
         System.out.println(title)

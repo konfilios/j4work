@@ -9,7 +9,7 @@ object AlphabetUtils {
     private val LATIN_LETTER = Regex("[^a-zA-Z]")
     private val NONLATIN_LETTER = Regex("[a-zA-Z]")
 
-    fun containsWordsWithMixedAlphabets(s : String) =
+    fun containsWordsWithMixedAlphabets(s: String) =
         s.replace(NONLETTER, "")     // Leave only letters and spaces in the name
             .split(WHITESPACE)          // Split into individual words
             .find { it ->

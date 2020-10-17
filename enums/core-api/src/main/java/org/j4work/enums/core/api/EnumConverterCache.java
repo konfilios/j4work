@@ -24,7 +24,9 @@ class EnumConverterCache {
      */
     @Nonnull
     <E extends Enum<E>>
-    EnumConverter<E> writeToCache(@Nonnull Class<E> enumClass, @Nonnull EnumConverter<E> converter) {
+    EnumConverter<E> writeToCache(
+        @Nonnull Class<E> enumClass, @Nonnull EnumConverter<E> converter
+    ) {
         cachedConverterByEnumClass.put(enumClass, converter);
 
         return converter;

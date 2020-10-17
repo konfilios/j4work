@@ -15,19 +15,20 @@
         -->
         <createTable tableName="l10n_country">
             <column name="id" type="CHAR(2)" autoIncrement="false">
-                <constraints primaryKey="true" nullable="false" />
+                <constraints primaryKey="true" nullable="false"/>
             </column>
 
             <column name="lukey" type="CHAR(2)">
-                <constraints nullable="false" unique="true" />
+                <constraints nullable="false" unique="true"/>
             </column>
 
             <column name="continent_id" type="CHAR(2)">
-                <constraints foreignKeyName="l10n_country_continentId_fk" references="l10n_continent(id)" nullable="false" />
+                <constraints foreignKeyName="l10n_country_continentId_fk"
+                             references="l10n_continent(id)" nullable="false"/>
             </column>
 
             <column name="name" type="NVARCHAR(63)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>

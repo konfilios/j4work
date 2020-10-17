@@ -9,6 +9,7 @@ import java.time.YearMonth;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TemporalProgressionTest {
+
     @Test
     public void testUpToLocalDate() {
         final TemporalProgression<LocalDate> progression = TemporalProgression.upTo(

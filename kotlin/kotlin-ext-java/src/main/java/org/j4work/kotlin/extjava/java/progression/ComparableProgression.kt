@@ -27,7 +27,7 @@ class ComparableProgression<T : Comparable<T>>(
             endInclusive == other.endInclusive &&
             step == other.step
 
-    override fun hashCode() : Int {
+    override fun hashCode(): Int {
         val start = startInclusive.hashCode()
         val end = endInclusive.hashCode()
         val step = step.hashCode()

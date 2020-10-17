@@ -26,7 +26,9 @@ public class EnumSpringConverter implements ConditionalGenericConverter {
     }
 
     @Override
-    public Object convert(Object sourceObject, TypeDescriptor sourceType, TypeDescriptor targetType) {
+    public Object convert(
+        Object sourceObject, TypeDescriptor sourceType, TypeDescriptor targetType
+    ) {
         return Enums.SERVICE.convert(
             sourceObject,
             targetType.getObjectType()

@@ -29,8 +29,9 @@ public class BiMapIndex<K, V> implements TwoWayIndex<K, V> {
 
             final K existingInverseValue = inverse.put(inverseKey, inverseValue);
             if (existingInverseValue != null) {
-                throw new IllegalStateException("Cannot inverse map: " + inverseKey + " maps back to both "
-                    + inverseValue + " and " + existingInverseValue);
+                throw new IllegalStateException(
+                    "Cannot inverse map: " + inverseKey + " maps back to both "
+                        + inverseValue + " and " + existingInverseValue);
             }
         }
 

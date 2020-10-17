@@ -1,9 +1,9 @@
 package org.j4work.enums.core.serialenums;
 
 import org.j4work.classutils.core.GenericTypes;
+import org.j4work.enums.core.api.Enums;
 import org.j4work.enums.core.spi.EnumConverter;
 import org.j4work.enums.core.spi.EnumConverterFactory;
-import org.j4work.enums.core.api.Enums;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -42,6 +42,7 @@ public abstract class SerialEnums {
      * and call its createConverter() method.
      */
     static class SerialEnumAnnotatedEnumConverterFactory implements EnumConverterFactory {
+
         @Nonnull
         private <E extends Enum<E>> EnumConverterFactory createConverterFactoryFromGeneric(
             @Nonnull Class<E> enumClass
@@ -53,7 +54,7 @@ public abstract class SerialEnums {
                 return factoryClass.newInstance();
             } catch (Exception e) {
                 throw new IllegalStateException("Could not instantiate " + factoryClass + " for "
-                                                    + enumClass + ": " + e.getMessage(), e);
+                    + enumClass + ": " + e.getMessage(), e);
             }
         }
 
@@ -62,7 +63,8 @@ public abstract class SerialEnums {
         Class<? extends EnumConverterFactory> getConverterFactoryClassFromGeneric(
             @Nonnull Class<E> enumClass
         ) {
-            final List<Class<?>> typeArgs = GenericTypes.getActualTypeArguments((Class) enumClass, SerialEnum.class);
+            final List<Class<?>> typeArgs = GenericTypes.getActualTypeArguments((Class) enumClass,
+                SerialEnum.class);
 
             if (typeArgs.isEmpty()) {
                 throw new IllegalArgumentException(

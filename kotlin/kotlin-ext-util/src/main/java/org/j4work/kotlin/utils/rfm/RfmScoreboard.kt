@@ -25,30 +25,32 @@ fun <K, T>
 ): RfmScoreboard<K, T> {
     val scores = associateBy(
         keySelector,
-        { MutableRfmScoreImpl(
-            item = it,
-            recencyValue = recencySelector(it),
-            frequencyValue = frequencySelector(it),
-            monetaryValue = monetarySelector(it)
-        ) }
+        {
+            MutableRfmScoreImpl(
+                item = it,
+                recencyValue = recencySelector(it),
+                frequencyValue = frequencySelector(it),
+                monetaryValue = monetarySelector(it)
+            )
+        }
     )
-        val recencyCategories = scores.values.calculateCategories(
-            categoryCount = recencyCategoryCount,
-            valueSelector = { it.recencyValue },
-            categoryCallback = { rfm, category -> rfm.recencyCategory = category }
-        )
+    val recencyCategories = scores.values.calculateCategories(
+        categoryCount = recencyCategoryCount,
+        valueSelector = { it.recencyValue },
+        categoryCallback = { rfm, category -> rfm.recencyCategory = category }
+    )
 
     val frequencyCategories = scores.values.calculateCategories(
-            categoryCount = frequencyCategoryCount,
-            valueSelector = { it.frequencyValue },
-            categoryCallback = { rfm, category -> rfm.frequencyCategory = category }
-        )
+        categoryCount = frequencyCategoryCount,
+        valueSelector = { it.frequencyValue },
+        categoryCallback = { rfm, category -> rfm.frequencyCategory = category }
+    )
 
-        val monetaryCategories = scores.values.calculateCategories(
-            categoryCount = monetaryCategoryCount,
-            valueSelector = { it.monetaryValue },
-            categoryCallback = { rfm, category -> rfm.monetaryCategory = category }
-        )
+    val monetaryCategories = scores.values.calculateCategories(
+        categoryCount = monetaryCategoryCount,
+        valueSelector = { it.monetaryValue },
+        categoryCallback = { rfm, category -> rfm.monetaryCategory = category }
+    )
 
 
     return RfmScoreboard(
@@ -64,9 +66,9 @@ private fun <F> Collection<F>.calculateCategories(
     valueSelector: (F) -> Int,
     sortDirection: ComparableProgressionDirection = ComparableProgressionDirection.ASC,
     categoryCallback: (F, Int) -> Unit
-) : Map<Int, StatisticalSummary> {
+): Map<Int, StatisticalSummary> {
     val sorted = when (sortDirection) {
-        ComparableProgressionDirection.ASC  -> sortedBy(valueSelector)
+        ComparableProgressionDirection.ASC -> sortedBy(valueSelector)
         ComparableProgressionDirection.DESC -> sortedByDescending(valueSelector)
     }
 
@@ -77,7 +79,7 @@ private fun <F> Collection<F>.calculateCategories(
     var curCat = curCatContainer.createFirstCategoryBuilder()
 
     var id = 0
-    var prevValue : Int? = null
+    var prevValue: Int? = null
     sorted.forEach {
         categoryCallback(it, curCat.categoryOrd)
 
@@ -86,7 +88,7 @@ private fun <F> Collection<F>.calculateCategories(
 
         if (id >= curCat.expectedLastItemOrd
             && prevValue != curValue
-            ) {
+        ) {
             // Finalize previous category and start new
             curCat = curCatContainer.commitCategoryBuilder(curCat)
         }

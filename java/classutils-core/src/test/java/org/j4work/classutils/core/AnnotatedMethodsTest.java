@@ -1,6 +1,6 @@
 /*
  * @(#)ClassUtilsTypeArgumentsTest.java     6 Mar 2009
- * 
+ *
  * Copyright © 2009 Andrew Phillips.
  *
  * ====================================================================
@@ -12,7 +12,7 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
  * implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -37,66 +37,79 @@ import static org.junit.Assert.fail;
 
 /**
  * Unit tests for the {@link ClassMembers#getAnnotatedMethods(Class, Class)} method.
- * 
- * @author aphillips
- * @since 6 Mar 2009
- * @see ClassMembersTest
  *
+ * @author aphillips
+ * @see ClassMembersTest
+ * @since 6 Mar 2009
  */
 @RunWith(value = Parameterized.class)
 public class AnnotatedMethodsTest {
+
     private final Class<?> clazz;
+
     private final Class<? extends Annotation> annotationType;
+
     private final boolean validArguments;
+
     private final Set<Method> expectedMethods;
-    
+
     @SuppressWarnings("unused")
     private static class StubObject {
-        public static void unannotatedStaticMethod() {}
-        
+
+        public static void unannotatedStaticMethod() {
+        }
+
         @Resource
-        public static void resourceStaticMethod() {}
-        
-        public void unannotatedMethod() {}
-        
+        public static void resourceStaticMethod() {
+        }
+
+        public void unannotatedMethod() {
+        }
+
         // @Generated does not have runtime retention!
         @Generated("")
-        public void generatedMethod() {}
-        
+        public void generatedMethod() {
+        }
+
         @Resource
-        public void resourceMethod() {}
+        public void resourceMethod() {
+        }
     }
-    
+
     @Parameters
-    public static Collection<Object[]> data() throws Exception {
+    public static Collection<Object[]> data()
+        throws Exception {
         List<Object[]> data = new ArrayList<Object[]>();
-        
+
         // invalid arguments
-        data.add(new Object[] { null, null, false, null });
-        
+        data.add(new Object[]{null, null, false, null});
+
         // annotations for which no methods are found
-        data.add(new Object[] { StubObject.class, null, true, new HashSet<Method>() });
-        data.add(new Object[] { StubObject.class, Generated.class, true, new HashSet<Method>() });
-        data.add(new Object[] { StubObject.class, Target.class, true, new HashSet<Method>() });
-        
-        data.add(new Object[] { StubObject.class, Resource.class, true,
-                                asSet(getMethod("resourceStaticMethod"), getMethod("resourceMethod")) });        
+        data.add(new Object[]{StubObject.class, null, true, new HashSet<Method>()});
+        data.add(new Object[]{StubObject.class, Generated.class, true, new HashSet<Method>()});
+        data.add(new Object[]{StubObject.class, Target.class, true, new HashSet<Method>()});
+
+        data.add(new Object[]{StubObject.class, Resource.class, true,
+            asSet(getMethod("resourceStaticMethod"), getMethod("resourceMethod"))});
         return data;
     }
-    
-    private static Method getMethod(String methodName) throws Exception {
+
+    private static Method getMethod(String methodName)
+        throws Exception {
         return StubObject.class.getMethod(methodName);
     }
-    
+
     // can't use SetUtils from qrmedia's commons-collections...*sigh*...
     private static <T> Set<T> asSet(T... objs) {
         return new HashSet<T>(Arrays.asList(objs));
     }
 
     // called for each parameter set in the test data
-    public AnnotatedMethodsTest(Class<?> clazz,
-                                Class<? extends Annotation> annotationType, boolean validArguments,
-                                Set<Method> expectedMethods) {
+    public AnnotatedMethodsTest(
+        Class<?> clazz,
+        Class<? extends Annotation> annotationType, boolean validArguments,
+        Set<Method> expectedMethods
+    ) {
         this.clazz = clazz;
         this.annotationType = annotationType;
         this.validArguments = validArguments;
@@ -105,27 +118,27 @@ public class AnnotatedMethodsTest {
 
     @Test
     public void getAnnotatedMethods_invalid() {
-        
+
         if (!validArguments) {
-            
+
             try {
                 ClassMembers.getAnnotatedMethods(clazz, annotationType);
                 fail();
             } catch (IllegalArgumentException exception) {
                 // expected
             }
-            
+
         }
-        
-    }   
-    
+
+    }
+
     @Test
     public void getAnnotatedMethods() {
-        
+
         if (validArguments) {
-            assertEquals(expectedMethods,  ClassMembers.getAnnotatedMethods(clazz, annotationType));
+            assertEquals(expectedMethods, ClassMembers.getAnnotatedMethods(clazz, annotationType));
         }
-        
+
     }
-    
+
 }

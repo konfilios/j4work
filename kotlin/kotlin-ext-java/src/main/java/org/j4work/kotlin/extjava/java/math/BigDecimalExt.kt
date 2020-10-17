@@ -5,21 +5,21 @@ import java.math.RoundingMode
 
 private val BIG_DECIMAL_HUNDRED = BigDecimal.valueOf(100)
 
-val BigDecimal.HUNDRED :BigDecimal
+val BigDecimal.HUNDRED: BigDecimal
     get() = BIG_DECIMAL_HUNDRED
 
 /**
  * Multiplication with an integer requires prior conversion to BigDecimal.
  */
-operator fun BigDecimal.times(o : Int)  =
+operator fun BigDecimal.times(o: Int) =
     this.times(BigDecimal.valueOf(o.toLong()))
 
 fun BigDecimal.safePercentageOver(
-    denominator : BigDecimal,
-    scale : Int = 2,
+    denominator: BigDecimal,
+    scale: Int = 2,
     roundingMode: RoundingMode = RoundingMode.HALF_UP,
-    valueIfDevisionByZero : BigDecimal = BigDecimal.valueOf(0, scale)
-)  =
+    valueIfDevisionByZero: BigDecimal = BigDecimal.valueOf(0, scale)
+) =
     if (denominator.signum() == 0) {
         valueIfDevisionByZero
     } else {

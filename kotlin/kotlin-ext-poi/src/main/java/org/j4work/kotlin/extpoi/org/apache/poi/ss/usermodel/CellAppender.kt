@@ -15,7 +15,7 @@ class CellAppender(
         col: String,
         type: CellType = CellType.BLANK,
         init: Cell.() -> Unit = {}
-    ) : CellAppender {
+    ): CellAppender {
         curColNum = CellReference.convertColStringToIndex(col)
         return addCell(type, init)
     }

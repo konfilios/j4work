@@ -92,7 +92,8 @@ public class GenericTypes {
          * need one, however (and it doesn't matter which one) since the compiler does not allow
          * inheritance chains with conflicting generic type information.
          */
-        List<Class<? extends S>> superclassChain = TypeChains.getSuperclassChain(typedClass, typedSuperclass);
+        List<Class<? extends S>> superclassChain = TypeChains.getSuperclassChain(typedClass,
+            typedSuperclass);
 
         assert superclassChain != null : Arrays.<Class<?>>asList(typedSuperclass, typedClass);
 

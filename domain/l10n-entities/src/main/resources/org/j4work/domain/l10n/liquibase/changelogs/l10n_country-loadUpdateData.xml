@@ -11,10 +11,10 @@
         -->
         <loadUpdateData tableName="l10n_country" primaryKey="id"
                         file="org/j4work/domain/l10n/datasets/l10n_countries.csv">
-            <column header="COUNTRY_ID" name="id" type="STRING" />
-            <column header="COUNTRY_LUKEY" name="lukey" type="STRING" />
-            <column header="CONTINENT_ID" name="continent_id" type="STRING" />
-            <column header="COUNTRY_NAME" name="name" type="STRING" />
+            <column header="COUNTRY_ID" name="id" type="STRING"/>
+            <column header="COUNTRY_LUKEY" name="lukey" type="STRING"/>
+            <column header="CONTINENT_ID" name="continent_id" type="STRING"/>
+            <column header="COUNTRY_NAME" name="name" type="STRING"/>
         </loadUpdateData>
     </changeSet>
 </databaseChangeLog>

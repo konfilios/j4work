@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 /**
  * Convert between Enums and Strings using a String TwoWayIndex.
- *
+ * <p>
  * Conversions to/from numbers are not supported.
  */
 public class StringOnlyIndexedEnumConverter<E extends Enum<E>> implements EnumConverter<E> {
@@ -24,7 +24,7 @@ public class StringOnlyIndexedEnumConverter<E extends Enum<E>> implements EnumCo
     @Override
     public E valueOf(@Nonnull Object id) {
         if (id instanceof String) {
-            return index.getKeyOfValue((String)id);
+            return index.getKeyOfValue((String) id);
 
         } else {
             return null;

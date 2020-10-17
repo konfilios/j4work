@@ -89,7 +89,7 @@ object GreeklishUtils {
     /**
      * http://www.greek-language.gr/greekLang/files/document/modern_greek/grammatiki.triantafyllidi.pdf.
      */
-    fun toGreeklish(s : String): String {
+    fun toGreeklish(s: String): String {
         val sWithoutDiacritics = s.removeDiacritics()
         val sb = StringBuffer(sWithoutDiacritics.length)
 

@@ -18,7 +18,7 @@ class RowAppender(
         return this
     }
 
-    fun skip(skipCount: Int = 1) : RowAppender {
+    fun skip(skipCount: Int = 1): RowAppender {
         curRowNum += skipCount
         return this
     }

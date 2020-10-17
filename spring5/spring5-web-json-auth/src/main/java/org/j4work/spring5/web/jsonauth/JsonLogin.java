@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Configuration login with JSON request and response payloads.
  */
-public class JsonLogin
-{
+public class JsonLogin {
+
     static private final Log logger = LogFactory.getLog(JsonLogin.class);
 
     /**
@@ -32,8 +32,7 @@ public class JsonLogin
     static public HttpSecurity configure(
         HttpSecurity http, String loginUri, ObjectMapper objectMapper
     )
-        throws Exception
-    {
+        throws Exception {
 
         logger.debug("Configuring JSON login on " + loginUri);
 

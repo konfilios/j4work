@@ -9,11 +9,12 @@ import java.util.Optional;
 import java.util.UUID;
 
 /**
- *
+ * A {@link UuIdentifiableRepository} with {@link PagingAndSortingRepository} functionality.
  */
 public interface UuIdentifiablePagingAndSortingRepository
     <E extends UuIdentifiable & Identifiable<ID>, ID extends Serializable>
-    extends PagingAndSortingRepository<E, ID> {
+    extends UuIdentifiableRepository<E, ID>,
+    PagingAndSortingRepository<E, ID> {
 
     Optional<E> findByUuid(UUID uuid);
 }

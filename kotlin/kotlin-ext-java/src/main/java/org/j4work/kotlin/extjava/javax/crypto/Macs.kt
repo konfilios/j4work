@@ -19,8 +19,8 @@ object Macs {
      * @param message The facebook access token which will be used as the signing key
      * @return Hash result as hexadecimal string
      */
-    fun hash(hashAlgorithm: String, key: String, message: String): ByteArray
-        = Mac.getInstance(hashAlgorithm).run {
+    fun hash(hashAlgorithm: String, key: String, message: String): ByteArray = Mac.getInstance(
+        hashAlgorithm).run {
         // Set key
         init(SecretKeySpec(key.toByteArray(), hashAlgorithm))
         // Calculate hash

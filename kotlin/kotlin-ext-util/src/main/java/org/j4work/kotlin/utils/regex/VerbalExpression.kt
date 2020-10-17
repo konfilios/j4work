@@ -105,7 +105,8 @@ private constructor(private val pattern: Pattern) {
          * *
          * @return this builder
          */
-        @JvmOverloads fun startOfLine(pEnable: Boolean = true): Builder {
+        @JvmOverloads
+        fun startOfLine(pEnable: Boolean = true): Builder {
             this.prefixes.append(if (pEnable) "^" else "")
             if (!pEnable) {
                 this.prefixes = StringBuilder(this.prefixes.toString().replace("^", ""))
@@ -120,7 +121,8 @@ private constructor(private val pattern: Pattern) {
          * *
          * @return this builder
          */
-        @JvmOverloads fun endOfLine(pEnable: Boolean = true): Builder {
+        @JvmOverloads
+        fun endOfLine(pEnable: Boolean = true): Builder {
             this.suffixes.append(if (pEnable) "$" else "")
             if (!pEnable) {
                 this.suffixes = StringBuilder(this.suffixes.toString().replace("$", ""))
@@ -403,7 +405,8 @@ private constructor(private val pattern: Pattern) {
             return this
         }
 
-        @JvmOverloads fun withAnyCase(pEnable: Boolean = true): Builder {
+        @JvmOverloads
+        fun withAnyCase(pEnable: Boolean = true): Builder {
             if (pEnable) {
                 this.addModifier('i')
             } else {
@@ -720,7 +723,8 @@ private constructor(private val pattern: Pattern) {
      * *
      * @since 1.1
      */
-    @JvmOverloads fun getText(toTest: String, group: Int = 0): String {
+    @JvmOverloads
+    fun getText(toTest: String, group: Int = 0): String {
         val m = pattern.matcher(toTest)
         val result = StringBuilder()
         while (m.find()) {

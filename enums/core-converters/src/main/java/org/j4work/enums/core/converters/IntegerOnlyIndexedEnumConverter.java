@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 
 /**
  * Convert between Enums and Strings using an Integer TwoWayIndex.
- *
+ * <p>
  * Conversions to/from both Numbers and Strings are supported:
  * 1. Numbers are treated as integers.
  * 2. Strings are treated as string representations of Integers and are parsed using Integer.parseInt().
@@ -25,17 +25,17 @@ public class IntegerOnlyIndexedEnumConverter<E extends Enum<E>> implements EnumC
     @Override
     public boolean canConvert(@Nonnull Class otherClass) {
         return String.class == otherClass
-            ||  Number.class.isAssignableFrom(otherClass);
+            || Number.class.isAssignableFrom(otherClass);
     }
 
     @Nullable
     @Override
     public E valueOf(@Nonnull Object id) {
         if (id instanceof Number) {
-            return index.getKeyOfValue(((Number)id).intValue());
+            return index.getKeyOfValue(((Number) id).intValue());
 
         } else if (id instanceof String) {
-            return index.getKeyOfValue(Integer.parseInt((String)id));
+            return index.getKeyOfValue(Integer.parseInt((String) id));
 
         } else {
             return null;

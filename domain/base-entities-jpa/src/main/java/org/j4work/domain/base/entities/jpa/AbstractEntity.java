@@ -1,11 +1,15 @@
-package org.j4work.domain.base.entities;
+package org.j4work.domain.base.entities.jpa;
 
 
+import org.j4work.domain.base.entities.Identifiable;
+
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**
- * Abstract entity implementing hash code and equality.
+ * Abstract identifiable entity implementing hash code and equality.
  */
+@MappedSuperclass
 abstract public class AbstractEntity<ID extends Serializable>
     implements Identifiable<ID> {
 

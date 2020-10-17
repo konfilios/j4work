@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
  * Converts between Enum constants and Numbers or String values.
  */
 public interface EnumConverter<E extends Enum<E>> {
+
     /**
      * @return True if otherClass can be converted to/from enums.
      */
@@ -14,9 +15,9 @@ public interface EnumConverter<E extends Enum<E>> {
 
     /**
      * Convert id to an enum constant.
-     *
+     * <p>
      * If conversion from the given id's type is not supported at all, null is returned.
-     *
+     * <p>
      * If conversion from the given id type is supported, either a non-null value will be
      * returned or an exception will be thrown.
      *
@@ -28,15 +29,15 @@ public interface EnumConverter<E extends Enum<E>> {
 
     /**
      * Convert enum constant to object of given targetClass.
-     *
+     * <p>
      * If conversion to the given targetClass is not supported at all, null is returned.
-     *
+     * <p>
      * If conversion to the given targetClass is supported, either a non-null value will be
      * returned or an exception will be thrown.
      *
      * @param enumConstant Enum constant to be converted.
-     * @param targetClass Target class to convert to.
-     * @param <T> Type of target object.
+     * @param targetClass  Target class to convert to.
+     * @param <T>          Type of target object.
      * @return Converted object or null if conversion is not supported for the given targetClass.
      */
     @Nullable

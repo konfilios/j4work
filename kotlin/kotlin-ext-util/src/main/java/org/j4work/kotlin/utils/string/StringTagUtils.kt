@@ -24,7 +24,8 @@ object StringTagUtils {
         s
             .removeDiacritics()                         // Remove diacritics
             .replace("'", "")                           // Remove single quotes (used as accents)
-            .replace(REGEX_ONE_OR_MORE_WHITESPACE, " ") // Replace multiple whitespaces with a single space char
+            .replace(REGEX_ONE_OR_MORE_WHITESPACE,
+                " ") // Replace multiple whitespaces with a single space char
             .trim()                                     // Ignore surrounding whitespace
             .toLowerCase()                              // Lowercase
 

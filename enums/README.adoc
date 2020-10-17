@@ -1,9 +1,8 @@
-
 :numbered:
 
 == Goal
 
-Allow conversions between java Enum  and primitive java data types:
+Allow conversions between java Enum and primitive java data types:
 
 1. Boolean: boolean
 2. Exact Numbers: byte, short, int, long
@@ -48,10 +47,7 @@ These data types are the absolute basics for serialization:
 . Short as string (fully covered):
 .. short(X) = "X" for any X
 
-
-
 == Usage
-
 
 [source,java]
 ----
@@ -77,7 +73,6 @@ enum MyEnum implements EnhancedEnum<Integer, AnnotatedEnumConverter> {
     CONST_B
 }
 ----
-
 
 == Converter adapters
 

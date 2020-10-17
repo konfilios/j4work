@@ -12,7 +12,7 @@ public interface EnumConverterFactory {
      * Create a converter for given enumClass.
      *
      * @param enumClass Enumeration class for which a converter will be looked up.
-     * @param <E> Enumeration type.
+     * @param <E>       Enumeration type.
      * @return Converter for given enumClass or null if no applicable converter could be created/found.
      */
     @Nullable

@@ -29,7 +29,7 @@ inline fun <T : Any?, R> T.use(
     } finally {
         when {
 
-            this == null ->
+            this == null  ->
                 // Nothing to close
             {
             }
@@ -38,7 +38,7 @@ inline fun <T : Any?, R> T.use(
                 // Block completed without errors
                 this.close()
 
-            else ->
+            else          ->
                 // Block completed with errors, try to close
                 try {
                     this.close()

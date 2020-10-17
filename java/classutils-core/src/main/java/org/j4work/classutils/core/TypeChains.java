@@ -85,7 +85,8 @@ public class TypeChains {
     @Nonnull
     public static <S> Set<List<Class<? extends S>>> getSuperclassChains(
         @Nonnull Class<? extends S> clazz,
-        @Nonnull Class<S> superclass) {
+        @Nonnull Class<S> superclass
+    ) {
         return getSuperclassChainsInternal(clazz, superclass, false);
     }
 

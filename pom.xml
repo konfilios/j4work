@@ -6,7 +6,7 @@
 
     <groupId>org.j4work</groupId>
     <artifactId>j4work</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>1.3.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -21,14 +21,17 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <j4work.version>1.2.0-SNAPSHOT</j4work.version>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <j4work.version>1.3.0-SNAPSHOT</j4work.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
-        <j4work.spring-boot-2.version>2.3.3.RELEASE</j4work.spring-boot-2.version>
+        <j4work.spring-boot-2.version>2.3.4.RELEASE</j4work.spring-boot-2.version>
+        <hibernate.version>5.4.22.Final</hibernate.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
 
         <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib -->
         <j4work.kotlin-1.version>1.4.10</j4work.kotlin-1.version>
@@ -39,11 +42,14 @@
         <dokka.version>1.4.0</dokka.version>
 
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
-        <kotlin.compiler.jvmTarget>11</kotlin.compiler.jvmTarget>
+        <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
     </properties>
 
     <dependencies>
         <dependency>
+            <!--
+            https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
+            -->
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
             <version>3.0.1</version>
@@ -84,33 +90,70 @@
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>2.8.2</version>
                 </plugin>
+                <!--
+                https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin
+                -->
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-install-plugin
+                    -->
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5.1</version>
+                    <version>2.5.2</version>
                 </plugin>
                 <plugin>
+                    <!--
+                    https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin
+                    -->
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.4</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
+                    <!--
+                    https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin
+                    -->
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>2.9.1</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
+                    <!--
+                    https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin
+                    -->
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>2.6</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
+                    <!--
+                    https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin
+                    -->
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.3</version>
+                    <version>3.9.1</version>
                 </plugin>
                 <plugin>
+                    <!--
+                    https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin
+                    -->
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>2.2.1</version>
+                    <version>3.2.1</version>
                 </plugin>
                 <plugin>
+                    <!--
+                    https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin
+                    -->
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.17</version>
+                    <version>2.22.2</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    https://mvnrepository.com/artifact/org.bsc.maven/maven-processor-plugin
+                    -->
+                    <groupId>org.bsc.maven</groupId>
+                    <artifactId>maven-processor-plugin</artifactId>
+                    <version>4.4</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -144,6 +187,11 @@
             <dependency>
                 <groupId>org.j4work.domain</groupId>
                 <artifactId>base-entities</artifactId>
+                <version>${j4work.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.j4work.domain</groupId>
+                <artifactId>base-entities-jpa</artifactId>
                 <version>${j4work.version}</version>
             </dependency>
             <dependency>

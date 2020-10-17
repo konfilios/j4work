@@ -97,7 +97,7 @@ object HourRangeUtils {
 
     fun nonMeasurable(boundType: BoundType) =
         when (boundType) {
-            BoundType.OPEN   -> 1
+            BoundType.OPEN -> 1
             BoundType.CLOSED -> 0
         }
 }

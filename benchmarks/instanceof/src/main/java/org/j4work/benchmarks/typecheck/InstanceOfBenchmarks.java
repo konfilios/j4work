@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Benchmark instanceof/isInstance/isAssignableFrom/class equality performance.
- *
+ * <p>
  * How to run:
  * -----------
  * mvn clean package
@@ -16,8 +16,10 @@ import java.util.concurrent.TimeUnit;
 @Warmup(iterations = 4)
 @Measurement(iterations = 6)
 public class InstanceOfBenchmarks {
+
     @State(Scope.Benchmark)
     static public class InstanceAndClassState {
+
         final private Object integer = 0;
 
         final private Class integerClass = Integer.class;

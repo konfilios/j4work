@@ -1,17 +1,24 @@
-package org.j4work.domain.base.entities;
+package org.j4work.domain.base.entities.jpa;
 
+import org.j4work.domain.base.entities.IdUuidIdentifiable;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.util.UUID;
 
 /**
  * UUID identifiable entity with auto generated id.
- *
- * @see <a href="/org/j4work/domain/base/jpa/orm.xml">orm.xml</a>
  */
+@MappedSuperclass
+@Access(AccessType.FIELD)
 abstract public class AutoIdUuEntity<ID extends Serializable>
     extends AutoIdEntity<ID>
-    implements UuIdentifiable {
+    implements IdUuidIdentifiable<ID> {
 
+    @Column(nullable = false)
     private UUID uuid;
 
     /**

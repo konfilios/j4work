@@ -11,9 +11,9 @@
         -->
         <loadUpdateData tableName="l10n_timezone" primaryKey="id"
                         file="org/j4work/domain/l10n/datasets/l10n_timezones.csv">
-            <column header="TIMEZONE_ID" name="id" type="NUMERIC" />
-            <column header="TIMEZONE_LUKEY" name="lukey" type="STRING" />
-            <column header="TIMEZONE_NAME" name="name" type="STRING" />
+            <column header="TIMEZONE_ID" name="id" type="NUMERIC"/>
+            <column header="TIMEZONE_LUKEY" name="lukey" type="STRING"/>
+            <column header="TIMEZONE_NAME" name="name" type="STRING"/>
         </loadUpdateData>
     </changeSet>
 </databaseChangeLog>

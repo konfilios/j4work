@@ -4,12 +4,15 @@ import org.j4work.kotlin.extjava.java.progression.ComparableProgressionDirection
 import java.math.BigDecimal
 
 class Ranking<out T> internal constructor(
-    rankedItems : List<Ranked<T>>
+    rankedItems: List<Ranked<T>>
 ) : Collection<Ranked<T>> by rankedItems {
 
 }
 
-fun <T> Collection<T>.rankBy(direction: ComparableProgressionDirection, valueSelector: (T) -> BigDecimal): Ranking<T> {
+fun <T> Collection<T>.rankBy(
+    direction: ComparableProgressionDirection,
+    valueSelector: (T) -> BigDecimal
+): Ranking<T> {
     var prevValue: BigDecimal? = null
     var cumulativeValue = BigDecimal.ZERO
     var competitionRank = 0
@@ -17,7 +20,7 @@ fun <T> Collection<T>.rankBy(direction: ComparableProgressionDirection, valueSel
     var denseRank = 0
 
     val comparator = when (direction) {
-        ComparableProgressionDirection.ASC  -> compareBy(valueSelector)
+        ComparableProgressionDirection.ASC -> compareBy(valueSelector)
         ComparableProgressionDirection.DESC -> compareByDescending(valueSelector)
     }
 

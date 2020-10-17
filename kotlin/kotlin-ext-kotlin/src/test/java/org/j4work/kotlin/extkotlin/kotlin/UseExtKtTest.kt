@@ -43,6 +43,7 @@ class UseExtKtTest {
                 .isEqualTo(true)
         }
     }
+
     @Test
     fun `fail when finish fails`() {
         Finishable().let {

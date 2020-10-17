@@ -1,7 +1,7 @@
 package org.j4work.kotlin.utils.string
 
-import org.j4work.kotlin.utils.string.StringTagUtils.parseCommentedData
 import org.assertj.core.api.Assertions.assertThat
+import org.j4work.kotlin.utils.string.StringTagUtils.parseCommentedData
 import org.junit.Test
 
 /**
@@ -44,7 +44,7 @@ class StringTagUtilsTest {
         assertThat(parseCommentedData(" ( the comm ) "))
             .isEqualTo(Pair("", "the comm"))
     }
-    
+
     @Test
     fun `parse data with comment but without space`() {
         assertThat(parseCommentedData("the data(the comm)"))

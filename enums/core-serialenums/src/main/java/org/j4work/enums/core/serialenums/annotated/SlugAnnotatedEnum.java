@@ -16,6 +16,7 @@ public interface SlugAnnotatedEnum {
     @Target(ElementType.FIELD)
     @Retention(RetentionPolicy.RUNTIME)
     @interface Slug {
+
         String value();
     }
 

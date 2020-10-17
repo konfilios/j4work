@@ -19,7 +19,7 @@ import java.util.*
 val Cell.asString: String?
     get() = when (cellTypeEnum) {
         CellType.NUMERIC -> NumberToTextConverter.toText(numericCellValue)
-        else -> stringCellValue
+        else             -> stringCellValue
     }
 
 /**
@@ -41,7 +41,7 @@ fun Cell?.asString(defaultIfNull: String = ""): String =
     } else {
         when (cellTypeEnum) {
             CellType.NUMERIC -> NumberToTextConverter.toText(numericCellValue)
-            else -> stringCellValue
+            else             -> stringCellValue
         }
     }
 

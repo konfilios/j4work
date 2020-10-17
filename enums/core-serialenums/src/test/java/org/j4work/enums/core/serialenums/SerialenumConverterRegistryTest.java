@@ -1,9 +1,8 @@
 package org.j4work.enums.core.serialenums;
 
-import org.j4work.enums.core.api.*;
+import org.j4work.enums.core.serialenums.SerialEnums.SerialEnum;
 import org.j4work.enums.core.spi.EnumConverter;
 import org.j4work.enums.core.spi.EnumConverterFactory;
-import org.j4work.enums.core.serialenums.SerialEnums.SerialEnum;
 import org.junit.Test;
 
 import javax.annotation.Nonnull;

@@ -12,7 +12,7 @@ interface ComparableProgressionStep<T : Comparable<T>> {
     /**
      * Create a new progression step with the reverse direction.
      */
-    fun reverse() : ComparableProgressionStep<T>
+    fun reverse(): ComparableProgressionStep<T>
 
     /**
      * Direction of step.

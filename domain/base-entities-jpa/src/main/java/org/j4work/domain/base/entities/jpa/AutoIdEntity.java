@@ -1,15 +1,18 @@
-package org.j4work.domain.base.entities;
+package org.j4work.domain.base.entities.jpa;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Entity with auto generated id.
- *
- * @see <a href="/org/j4work/domain/base/jpa/orm.xml">orm.xml</a>
+ * Identifiable entity with auto generated id.
  */
+@MappedSuperclass
+@Access(AccessType.FIELD)
 abstract public class AutoIdEntity<ID extends Serializable>
     extends AbstractEntity<ID> {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private ID id;
 
     /**

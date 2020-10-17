@@ -1,12 +1,12 @@
 package org.j4work.enums.core.serialenums.annotated;
 
-import org.j4work.datastractures.twowayindex.impl.BiMapIndex;
-import org.j4work.enums.core.serialenums.SerialEnums;
-import org.j4work.enums.core.spi.EnumConverterFactory;
-import org.j4work.enums.core.spi.EnumConverter;
-import org.j4work.enums.core.converters.IntegerOnlyIndexedEnumConverter;
 import org.j4work.classutils.core.AnnotatedEnums;
 import org.j4work.classutils.core.BiFunction;
+import org.j4work.datastractures.twowayindex.impl.BiMapIndex;
+import org.j4work.enums.core.converters.IntegerOnlyIndexedEnumConverter;
+import org.j4work.enums.core.serialenums.SerialEnums;
+import org.j4work.enums.core.spi.EnumConverter;
+import org.j4work.enums.core.spi.EnumConverterFactory;
 
 import javax.annotation.Nonnull;
 import java.lang.annotation.ElementType;

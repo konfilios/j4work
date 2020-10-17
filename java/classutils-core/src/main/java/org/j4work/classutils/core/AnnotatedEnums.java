@@ -24,11 +24,14 @@ public class AnnotatedEnums {
     /**
      * Retrieve annotation of given class from field or throw exception.
      */
-    private static <A extends Annotation> A requireAnnotation(Field field, Class<A> annotationClass) {
+    private static <A extends Annotation> A requireAnnotation(
+        Field field, Class<A> annotationClass
+    ) {
         final A annotation = field.getAnnotation(annotationClass);
 
         if (annotation == null) {
-            throw new IllegalStateException("Field " + field + " must be annotated with a " + annotationClass);
+            throw new IllegalStateException(
+                "Field " + field + " must be annotated with a " + annotationClass);
         }
 
         return annotation;
@@ -37,14 +40,14 @@ public class AnnotatedEnums {
     /**
      * Create a map between all constants of given enumClass and their corresponding annotation
      * of given annotationClass.
-     *
+     * <p>
      * If any enum constant of the enumClass is not annotated with the given annotationClass,
      * an exception will be thrown.
      *
-     * @param enumClass Enum class whose constants will be used as keys in the map.
+     * @param enumClass       Enum class whose constants will be used as keys in the map.
      * @param annotationClass Class of annotations which are required to decorate each
-     * @param <E> Enum class type.
-     * @param <A> Annotation class type.
+     * @param <E>             Enum class type.
+     * @param <A>             Annotation class type.
      * @return Map between enum constants and their corresponding annotations of annotationClass type.
      * @throws IllegalStateException If an enum constant does not have an annotation of the given class.
      */

@@ -1,16 +1,23 @@
-package org.j4work.domain.base.entities;
+package org.j4work.domain.base.entities.jpa;
 
+import org.j4work.domain.base.entities.NamedIdentifiable;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**
- * Named entity with auto generated id.
- *
- * @see <a href="/org/j4work/domain/base/jpa/orm.xml">orm.xml</a>
+ * Identifable named entity with auto generated id.
  */
+@MappedSuperclass
+@Access(AccessType.FIELD)
 abstract public class AutoIdNamedEntity<ID extends Serializable>
     extends AutoIdEntity<ID>
-    implements Named {
+    implements NamedIdentifiable<ID> {
 
+    @Column(nullable = false)
     private String name;
 
     /**

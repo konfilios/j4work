@@ -6,23 +6,23 @@ import java.util.Iterator;
 
 /**
  * Progression of temporal elements.
- *
+ * <p>
  * An ascending progression allows iteration over {@link Temporal}
  * objects of type {@link B} starting from {@link #start} and adding
  * {@link #step} until {@link #endInclusive} is reached (or exceeded).
- *
+ * <p>
  * Descending progressions work the same, but they subtract {@link #step}
  * instead of adding it.
- *
+ * <p>
  * For example, one can iterate through all YearMonths between March 2015
  * and May 2016 inclusive with 1-month steps, like this:
  *
  * <code>
  * for (YearMonth ym : TemporalProgression.of(YearMonth.of(3, 2015), YearMonth.of(5, 2016), Period.ofMonths(1)) {
- *     // :
+ * // :
  * }
  * </code>
- *
+ * <p>
  * Implementation notes: The class is immutable and thread-safe.
  */
 public class TemporalProgression<B extends Temporal & Comparable<? super B>>
@@ -100,7 +100,7 @@ public class TemporalProgression<B extends Temporal & Comparable<? super B>>
 
     @Override
     public Iterator<B> iterator() {
-        return isAscending 
+        return isAscending
             ? new AscendingTemporalIterator<>(this)
             : new DescendingTemporalIterator<>(this);
     }
@@ -129,7 +129,7 @@ public class TemporalProgression<B extends Temporal & Comparable<? super B>>
         @SuppressWarnings("unchecked")
         public B next() {
             final B next = current;
-            current = (B)current.plus(iterable.step);
+            current = (B) current.plus(iterable.step);
             return next;
         }
     }
@@ -158,7 +158,7 @@ public class TemporalProgression<B extends Temporal & Comparable<? super B>>
         @SuppressWarnings("unchecked")
         public B next() {
             final B next = current;
-            current = (B)current.minus(iterable.step);
+            current = (B) current.minus(iterable.step);
             return next;
         }
     }

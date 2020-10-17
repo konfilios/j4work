@@ -4,7 +4,7 @@ internal class MutableRfmScoreImpl<T>(
     override val item: T,
     override val recencyValue: Int,
     override val frequencyValue: Int,
-        override val monetaryValue: Int
+    override val monetaryValue: Int
 ) : RfmScore<T> {
 
     override var recencyCategory: Int = 0

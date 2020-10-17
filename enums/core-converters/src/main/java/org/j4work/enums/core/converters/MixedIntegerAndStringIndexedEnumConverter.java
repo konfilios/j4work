@@ -31,17 +31,17 @@ public class MixedIntegerAndStringIndexedEnumConverter<E extends Enum<E>> implem
     @Override
     public boolean canConvert(@Nonnull Class otherClass) {
         return String.class == otherClass
-            ||  Number.class.isAssignableFrom(otherClass);
+            || Number.class.isAssignableFrom(otherClass);
     }
 
     @Nullable
     @Override
     public E valueOf(@Nonnull Object id) {
         if (id instanceof Number) {
-            return integerIndex.getKeyOfValue(((Number)id).intValue());
+            return integerIndex.getKeyOfValue(((Number) id).intValue());
 
         } else if (id instanceof String) {
-            return stringIndex.getKeyOfValue((String)id);
+            return stringIndex.getKeyOfValue((String) id);
 
         } else {
             return null;

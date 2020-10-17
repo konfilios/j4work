@@ -22,5 +22,5 @@ fun Byte.toHexString(): String {
     val leftNibble = HEX_CHARS[(octet and 0b1111_0000).ushr(4)]
     val rightNibble = HEX_CHARS[octet and 0b0000_1111]
 
-    return  "$leftNibble$rightNibble"
+    return "$leftNibble$rightNibble"
 }

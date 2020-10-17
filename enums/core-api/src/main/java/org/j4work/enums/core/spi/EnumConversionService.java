@@ -15,10 +15,10 @@ public interface EnumConversionService {
 
     /**
      * Convert id to an enum constant of given enumClass.
-     *
+     * <p>
      * If a converter is not found for the given enumClass or conversion
      * from the given id's type is not supported by the found converter, null is returned.
-     *
+     * <p>
      * Otherwise, either a non-null value will be returned or an exception will be thrown.
      *
      * @param id Id object to be converted to an enum constant.
@@ -29,15 +29,15 @@ public interface EnumConversionService {
 
     /**
      * Convert enum constant to object of given targetClass.
-     *
+     * <p>
      * If a converter is not found for the class of the given enum constant or conversion
      * to the given targetClass is not supported by the found converter, null is returned.
-     *
+     * <p>
      * Otherwise, either a non-null value will be returned or an exception will be thrown.
      *
      * @param enumConstant Enum constant to be converted.
-     * @param targetClass Target class to convert to.
-     * @param <T> Type of target object.
+     * @param targetClass  Target class to convert to.
+     * @param <T>          Type of target object.
      * @return Converted object or null if conversion is not supported for the given targetClass.
      */
     @Nullable
