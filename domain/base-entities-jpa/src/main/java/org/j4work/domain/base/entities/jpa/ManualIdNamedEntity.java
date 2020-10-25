@@ -35,4 +35,9 @@ abstract public class ManualIdNamedEntity<ID extends Serializable>
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return name + " [" + getId() + ']';
+    }
 }

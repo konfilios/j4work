@@ -12,7 +12,7 @@ abstract public class AutoIdEntity<ID extends Serializable>
     extends AbstractEntity<ID> {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private ID id;
 
     /**

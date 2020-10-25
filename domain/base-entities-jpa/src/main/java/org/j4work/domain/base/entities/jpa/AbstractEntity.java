@@ -32,4 +32,10 @@ abstract public class AbstractEntity<ID extends Serializable>
             return id.equals(((Identifiable) o).getId());
         }
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "[" + getId() + ']';
+    }
+
 }

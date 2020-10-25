@@ -32,4 +32,9 @@ abstract public class RefEntity<ID extends Serializable>
     public String getLukey() {
         return lukey;
     }
+
+    @Override
+    public String toString() {
+        return getLukey() + '[' + getId() + ']';
+    }
 }
