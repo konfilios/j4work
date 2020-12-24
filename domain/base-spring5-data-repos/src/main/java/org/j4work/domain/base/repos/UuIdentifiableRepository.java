@@ -26,7 +26,7 @@ public interface UuIdentifiableRepository
     default E requireByUuid(UUID uuid) {
         return findByUuid(uuid)
             .orElseThrow(() -> new EntityNotFoundException(
-                "Could not find " + getClass().getSimpleName() + " with UUID '" + uuid + "'",
+                "Could not find UUID '" + uuid + "' in " + getClass().getSimpleName(),
                 getClass(),
                 uuid
             ));

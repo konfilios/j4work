@@ -5,20 +5,20 @@ package org.j4work.domain.base.repos;
  */
 public class EntityNotFoundException extends RuntimeException {
 
-    final private Class<?> entityClass;
+    final private Class<?> repoClass;
 
     final private Object searchIdentifier;
 
     public EntityNotFoundException(
-        String message, Class<?> entityClass, Object searchIdentifier
+        String message, Class<?> repoClass, Object searchIdentifier
     ) {
         super(message);
-        this.entityClass = entityClass;
+        this.repoClass = repoClass;
         this.searchIdentifier = searchIdentifier;
     }
 
-    public Class<?> getEntityClass() {
-        return entityClass;
+    public Class<?> getRepoClass() {
+        return repoClass;
     }
 
     public Object getSearchIdentifier() {
