@@ -39,6 +39,10 @@
                             @unit-kotlin -> org.jetbrains.kotlin:kotlin-stdlib-jre8
                         -->
                     </exclusion>
+                    <exclusion>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-stdlib-common</artifactId>
+                    </exclusion>
                 </exclusions>
             </dependency>
 

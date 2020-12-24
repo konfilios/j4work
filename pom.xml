@@ -29,20 +29,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
-        <j4work.spring-boot-2.version>2.3.4.RELEASE</j4work.spring-boot-2.version>
-        <hibernate.version>5.4.22.Final</hibernate.version>
+        <j4work.spring-boot-2.version>2.4.1</j4work.spring-boot-2.version>
+        <hibernate.version>5.4.26.Final</hibernate.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
 
         <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib -->
-        <j4work.kotlin-1.version>1.4.10</j4work.kotlin-1.version>
+        <j4work.kotlin-1.version>1.4.21</j4work.kotlin-1.version>
         <!-- https://mvnrepository.com/artifact/com.google.dagger/dagger-compiler -->
         <dagger-compiler.version>2.29.1</dagger-compiler.version>
         <!-- https://mvnrepository.com/artifact/io.github.microutils/kotlin-logging -->
-        <kotlin-logging.version>1.10.7</kotlin-logging.version>
+        <kotlin-logging.version>1.11.5</kotlin-logging.version>
         <dokka.version>1.4.0</dokka.version>
 
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
-        <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
+        <kotlin.compiler.jvmTarget>11</kotlin.compiler.jvmTarget>
     </properties>
 
     <dependencies>
@@ -155,8 +155,60 @@
                     <artifactId>maven-processor-plugin</artifactId>
                     <version>4.4</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>3.0.0-M3</version>
+                </plugin>
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                <version>3.2.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>attach-javadocs</id>-->
+<!--                        <goals>-->
+<!--                            <goal>jar</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-enforcer-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>enforce</id>-->
+<!--                        <configuration>-->
+<!--                            <rules>-->
+<!--                                <dependencyConvergence/>-->
+<!--                            </rules>-->
+<!--                        </configuration>-->
+<!--                        <goals>-->
+<!--                            <goal>enforce</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+        </plugins>
     </build>
 
     <dependencyManagement>
