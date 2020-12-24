@@ -17,4 +17,16 @@ public interface LukeyIdentifiableRepository
      * Find entity by lookup key.
      */
     Optional<E> findByLukey(String lukey);
+
+    /**
+     * Lookup by lukey. Return result or throw exception.
+     */
+    default E requireByLukey(String lukey) {
+        return findByLukey(lukey)
+            .orElseThrow(() -> new EntityNotFoundException(
+                "Could not find " + getClass().getSimpleName() + " with lookup-key '" + lukey + "'",
+                getClass(),
+                lukey
+            ));
+    }
 }

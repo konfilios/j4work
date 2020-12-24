@@ -5,8 +5,6 @@ import org.j4work.domain.base.entities.UuIdentifiable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.io.Serializable;
-import java.util.Optional;
-import java.util.UUID;
 
 /**
  * A {@link UuIdentifiableRepository} with {@link PagingAndSortingRepository} functionality.
@@ -16,5 +14,5 @@ public interface UuIdentifiablePagingAndSortingRepository
     extends UuIdentifiableRepository<E, ID>,
     PagingAndSortingRepository<E, ID> {
 
-    Optional<E> findByUuid(UUID uuid);
+//    Optional<E> findByUuid(UUID uuid);
 }

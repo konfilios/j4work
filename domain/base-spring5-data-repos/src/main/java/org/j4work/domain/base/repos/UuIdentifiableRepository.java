@@ -15,5 +15,20 @@ public interface UuIdentifiableRepository
     <E extends UuIdentifiable & Identifiable<ID>, ID extends Serializable>
     extends Repository<E, ID> {
 
+    /**
+     * Find by uuid.
+     */
     Optional<E> findByUuid(UUID uuid);
+
+    /**
+     * Lookup by uuid. Return result or throw exception.
+     */
+    default E requireByUuid(UUID uuid) {
+        return findByUuid(uuid)
+            .orElseThrow(() -> new EntityNotFoundException(
+                "Could not find " + getClass().getSimpleName() + " with UUID '" + uuid + "'",
+                getClass(),
+                uuid
+            ));
+    }
 }
