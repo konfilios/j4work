@@ -3,11 +3,8 @@ package org.j4work.kotlin.utils.string
 import org.assertj.core.api.Assertions.assertThat
 import org.j4work.kotlin.extguava.com.google.common.collect.TreeRangeSets
 import org.j4work.kotlin.utils.string.HourRangeUtils.parseHourRangeSet
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-/**
- * .
- */
 class HourRangeUtilsTest {
 
     @Test

@@ -1,7 +1,8 @@
 package org.j4work.kotlin.extjava.java.time
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import java.time.YearMonth
 
 class YearMonthExtKtTest {
@@ -9,9 +10,11 @@ class YearMonthExtKtTest {
     val YM_2015_3 = YearMonth.of(2015, 3)
     val YM_2015_4 = YearMonth.of(2015, 4)
 
-    @Test(expected = IllegalArgumentException::class)
+    @Test
     fun `step 0 is not allowed`() {
-        YM_2015_2.upTo(YM_2015_2, 0)
+        assertThrows<IllegalArgumentException> {
+            YM_2015_2.upTo(YM_2015_2, 0)
+        }
     }
 
     @Test

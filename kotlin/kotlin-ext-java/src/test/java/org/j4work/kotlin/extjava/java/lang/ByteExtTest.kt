@@ -1,7 +1,7 @@
 package org.j4work.kotlin.extjava.java.lang
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class ByteExtTest {
     @Test

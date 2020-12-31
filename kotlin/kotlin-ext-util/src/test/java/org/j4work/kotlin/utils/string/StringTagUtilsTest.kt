@@ -2,11 +2,8 @@ package org.j4work.kotlin.utils.string
 
 import org.assertj.core.api.Assertions.assertThat
 import org.j4work.kotlin.utils.string.StringTagUtils.parseCommentedData
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-/**
- * .
- */
 class StringTagUtilsTest {
 
     @Test

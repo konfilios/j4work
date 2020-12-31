@@ -2,11 +2,8 @@ package org.j4work.kotlin.utils.string
 
 import org.assertj.core.api.Assertions.assertThat
 import org.j4work.kotlin.utils.string.HumanNameUtils.sortWords
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
-/**
- * .
- */
 class HumanNameUtilsTest {
 
     @Test
