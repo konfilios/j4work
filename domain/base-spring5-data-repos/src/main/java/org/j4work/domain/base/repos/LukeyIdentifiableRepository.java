@@ -23,10 +23,6 @@ public interface LukeyIdentifiableRepository
      */
     default E requireByLukey(String lukey) {
         return findByLukey(lukey)
-            .orElseThrow(() -> new EntityNotFoundException(
-                "Could not find lookup-key '" + lukey + "' in " + getClass().getSimpleName(),
-                getClass(),
-                lukey
-            ));
+            .orElseThrow(() -> EntityNotFoundException.create(this, "lookup-key", lukey));
     }
 }

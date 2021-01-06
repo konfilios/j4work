@@ -3,8 +3,7 @@ package org.j4work.domain.l10n.util;
 import java.io.PrintStream;
 import java.time.ZoneId;
 import java.time.format.TextStyle;
-import java.util.Locale;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Prints csv lists of l10n entities.
@@ -35,8 +34,8 @@ class CsvPrinter {
             }
         }
 
-        System.out.println("\nRecord count: " + count);
-        System.out.println("Max lengths:" +
+        out.println("\nRecord count: " + count);
+        out.println("Max lengths:" +
             " id=" + maxIdLength + " chars" +
             " name=" + maxNameLength + " chars");
     }
@@ -66,8 +65,8 @@ class CsvPrinter {
             }
         }
 
-        System.out.println("\nRecord count: " + count);
-        System.out.println("Max lengths:" +
+        out.println("\nRecord count: " + count);
+        out.println("Max lengths:" +
             " id=" + maxIdLength + " chars" +
             " name=" + maxNameLength + " chars");
     }
@@ -96,19 +95,64 @@ class CsvPrinter {
                 maxNameLength = displayName.length();
             }
         }
-        System.out.println("\nRecord count: " + count);
-        System.out.println("Max lengths:" +
+        out.println("\nRecord count: " + count);
+        out.println("Max lengths:" +
             " id=" + Short.BYTES + " bytes" +
             " code=" + maxCodeLength + " chars" +
             " name=" + maxNameLength + " chars");
     }
 
+    public static void printIsoCurrencyCodes(PrintStream out) {
+//        Set<Currency> currencies = getAllAvailableCurrencies();
+        Set<Currency> currencies = getCurrenciesFromLocales();
+
+        out.println("\n\nid,code,name");
+        for (Currency currency : currencies) {
+            out.print(currency.getNumericCode() +
+                "," + currency.getCurrencyCode() +
+                "," + currency.getDisplayName() +
+                "\n"
+            );
+        }
+
+        out.println("\nRecord count: " + currencies.size());
+//        out.println("Max lengths:" +
+//            " id=" + Short.BYTES + " bytes" +
+//            " code=" + maxCodeLength + " chars" +
+//            " name=" + maxNameLength + " chars");
+    }
+
+    private static Set<Currency> getAllAvailableCurrencies() {
+        Set<Currency> currencies = new TreeSet<>(Comparator.comparing(Currency::getCurrencyCode));
+        currencies.addAll(Currency.getAvailableCurrencies());
+        return currencies;
+    }
+
+    private static Set<Currency> getCurrenciesFromLocales() {
+        Set<Currency> currencies = new TreeSet<>(Comparator.comparing(Currency::getCurrencyCode));
+
+        for (Locale locale : Locale.getAvailableLocales()) {
+            try {
+                Currency currency = Currency.getInstance(locale);
+
+                if (currency != null) {
+                    currencies.add(currency);
+                }
+            } catch (Exception exc) {
+                // Locale not found
+            }
+        }
+        return currencies;
+    }
+
     public static void main(String[] args) {
-        printIsoCountryCodes(System.out);
+//        printIsoCountryCodes(System.out);
+//
+//        printIsoLanguageCodes(System.out);
+//
+//        printTimezoneIds(System.out);
 
-        printIsoLanguageCodes(System.out);
-
-        printTimezoneIds(System.out);
+        printIsoCurrencyCodes(System.out);
 
         System.out.println("\nDone");
     }

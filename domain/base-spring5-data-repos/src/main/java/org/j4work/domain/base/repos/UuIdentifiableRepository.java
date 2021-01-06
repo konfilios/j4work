@@ -25,10 +25,15 @@ public interface UuIdentifiableRepository
      */
     default E requireByUuid(UUID uuid) {
         return findByUuid(uuid)
-            .orElseThrow(() -> new EntityNotFoundException(
-                "Could not find UUID '" + uuid + "' in " + getClass().getSimpleName(),
-                getClass(),
-                uuid
-            ));
+            .orElseThrow(() -> EntityNotFoundException.create(this, "UUID", uuid));
+    }
+
+    /**
+     * Fail with exception if uuid already exists.
+     */
+    default void requireUuidDoesNotExist(UUID uuid) {
+        if (findByUuid(uuid).isPresent()) {
+            throw EntityAlreadyExistsException.create(this, "UUID", uuid);
+        }
     }
 }

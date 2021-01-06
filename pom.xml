@@ -29,7 +29,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
-        <j4work.spring-boot-2.version>2.4.1</j4work.spring-boot-2.version>
+        <j4work.spring-boot-2.version>2.4.0</j4work.spring-boot-2.version>
         <hibernate.version>5.4.26.Final</hibernate.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
 
@@ -356,4 +356,12 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>konfilios-github</id>
+            <name>GitHub konfilios Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/konfilios/j4work</url>
+        </repository>
+    </distributionManagement>
 </project>

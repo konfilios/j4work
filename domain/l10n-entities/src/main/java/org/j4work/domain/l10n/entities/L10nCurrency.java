@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Access(AccessType.FIELD)
-//@AttributeOverride(name = "id", column = @Column(columnDefinition = "char"))
-public class L10nTimezone extends RefEntity<Short> {
+@AttributeOverride(name = "id", column = @Column(columnDefinition = "char"))
+public class L10nCurrency extends RefEntity<Short> {
 
 }

@@ -4,8 +4,7 @@ import org.j4work.domain.base.repos.RefEntityRepository;
 import org.j4work.domain.l10n.entities.L10nLanguage;
 
 /**
- *
+ * Repository of languages.
  */
 public interface L10nLanguageRepo extends RefEntityRepository<L10nLanguage, String> {
-
 }

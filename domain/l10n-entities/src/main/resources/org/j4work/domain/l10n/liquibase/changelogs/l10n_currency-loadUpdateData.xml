@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="l10n_currency-loadUpdateData" author="j4work">
+        <!--
+        Populate l10n_language data
+        -->
+        <loadUpdateData tableName="l10n_currency" primaryKey="id"
+                        file="org/j4work/domain/l10n/datasets/l10n_currencies.csv">
+            <column header="CURRENCY_ID" name="id" type="STRING"/>
+            <column header="CURRENCY_LUKEY" name="lukey" type="STRING"/>
+            <column header="CURRENCY_NAME" name="name" type="STRING"/>
+        </loadUpdateData>
+    </changeSet>
+</databaseChangeLog>

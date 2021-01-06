@@ -3,13 +3,13 @@ package org.j4work.domain.base.repos;
 /**
  * Runtime exception thrown when a repo lookup method doesn't yield results.
  */
-public class EntityNotFoundException extends RuntimeException {
+public class EntityAlreadyExistsException extends RuntimeException {
 
     final private String entityType;
 
     final private Object searchIdentifier;
 
-    public EntityNotFoundException(
+    public EntityAlreadyExistsException(
         String message, String entityClass, Object searchIdentifier
     ) {
         super(message);
@@ -25,15 +25,15 @@ public class EntityNotFoundException extends RuntimeException {
         return searchIdentifier;
     }
 
-    static public EntityNotFoundException create(
+    static public EntityAlreadyExistsException create(
         Object repo,
         String identifierType,
         Object identifierValue
     ) {
         final String entityType = EntityTypeResolver.resolveEntityType(repo);
 
-        return new EntityNotFoundException(
-            "Could not find " + entityType + " with " + identifierType + " '" + identifierValue + "'",
+        return new EntityAlreadyExistsException(
+            entityType + " with " + identifierType + " '" + identifierValue + "' already exists",
             entityType, identifierValue
         );
     }
