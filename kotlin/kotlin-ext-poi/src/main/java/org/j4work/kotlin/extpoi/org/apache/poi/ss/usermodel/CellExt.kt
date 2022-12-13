@@ -17,7 +17,7 @@ import java.util.*
  * Return as string independently of cell type.
  */
 val Cell.asString: String?
-    get() = when (cellTypeEnum) {
+    get() = when (cellType) {
         CellType.NUMERIC -> NumberToTextConverter.toText(numericCellValue)
         else             -> stringCellValue
     }
@@ -39,7 +39,7 @@ fun Cell?.asString(defaultIfNull: String = ""): String =
     if (this == null) {
         defaultIfNull
     } else {
-        when (cellTypeEnum) {
+        when (cellType) {
             CellType.NUMERIC -> NumberToTextConverter.toText(numericCellValue)
             else             -> stringCellValue
         }
@@ -53,7 +53,30 @@ fun Cell?.asBigDecimal(
     defaultIfNull: BigDecimal = BigDecimal.ZERO,
     roundingMode: RoundingMode = RoundingMode.HALF_UP
 ): BigDecimal =
-    this?.numericCellValue.toBigDecimal(scale, defaultIfNull, roundingMode)
+    if (this == null) {
+        defaultIfNull
+    } else {
+        try {
+            when (this.cellType) {
+                CellType.FORMULA -> {
+                    when (this.cachedFormulaResultType) {
+                        CellType.NUMERIC -> this.numericCellValue.toBigDecimal(scale, defaultIfNull, roundingMode)
+                        else -> this.stringCellValue.toBigDecimal(scale, defaultIfNull, roundingMode)
+                    }
+                }
+
+                CellType.NUMERIC -> {
+                    this.numericCellValue.toBigDecimal(scale, defaultIfNull, roundingMode)
+                }
+
+                else -> {
+                    this.stringCellValue.toBigDecimal(scale, defaultIfNull, roundingMode)
+                }
+            }
+        } catch (e : Exception) {
+            throw RuntimeException("Could not parse ${this.address} as BigDecimal", e)
+        }
+    }
 
 fun Cell?.asInt(defaultIfNull: Int = 0): Int =
     if (this == null) {

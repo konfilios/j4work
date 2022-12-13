@@ -29,17 +29,29 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
-        <j4work.spring-boot-2.version>2.4.0</j4work.spring-boot-2.version>
-        <hibernate.version>5.4.26.Final</hibernate.version>
+        <j4work.spring-boot-2.version>2.7.5</j4work.spring-boot-2.version>
+        <hibernate.version>5.6.12.Final</hibernate.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
 
         <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib -->
-        <j4work.kotlin-1.version>1.4.21</j4work.kotlin-1.version>
+        <j4work.kotlin-1.version>1.7.21</j4work.kotlin-1.version>
         <!-- https://mvnrepository.com/artifact/com.google.dagger/dagger-compiler -->
-        <dagger-compiler.version>2.29.1</dagger-compiler.version>
+        <dagger-compiler.version>2.44.2</dagger-compiler.version>
         <!-- https://mvnrepository.com/artifact/io.github.microutils/kotlin-logging -->
-        <kotlin-logging.version>1.11.5</kotlin-logging.version>
-        <dokka.version>1.4.0</dokka.version>
+        <kotlin-logging.version>3.0.4</kotlin-logging.version>
+        <!-- https://mvnrepository.com/artifact/org.jetbrains.dokka/dokka-core -->
+        <dokka.version>1.6.21</dokka.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <guava.version>31.1-jre</guava.version>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <apache-poi.version>5.2.3</apache-poi.version>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.tika/tika-core -->
+        <tika.version>1.28.5</tika.version>
 
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <kotlin.compiler.jvmTarget>11</kotlin.compiler.jvmTarget>
@@ -52,12 +64,15 @@
             -->
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
-            <version>3.0.1</version>
+            <version>3.0.2</version>
             <scope>provided</scope>
             <optional>true</optional>
         </dependency>
 
         <dependency>
+            <!--
+            https://mvnrepository.com/artifact/net.jcip/jcip-annotations
+            -->
             <groupId>net.jcip</groupId>
             <artifactId>jcip-annotations</artifactId>
             <version>1.0</version>
@@ -81,14 +96,14 @@
                  -->
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <!--
                 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-deploy-plugin
                  -->
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
+                    <version>3.0.0</version>
                 </plugin>
                 <!--
                 https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin
@@ -96,49 +111,46 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
+                    <version>3.10.1</version>
                 </plugin>
                 <plugin>
                     <!--
                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-install-plugin
                     -->
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5.2</version>
+                    <version>3.1.0</version>
                 </plugin>
                 <plugin>
                     <!--
                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin
                     -->
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.3.0</version>
                 </plugin>
                 <plugin>
                     <!--
                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin
                     -->
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.4.1</version>
                 </plugin>
                 <plugin>
                     <!--
                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin
                     -->
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.3.0</version>
                 </plugin>
                 <plugin>
                     <!--
                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin
                     -->
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.9.1</version>
+                    <version>3.12.1</version>
                 </plugin>
                 <plugin>
-                    <!--
-                    https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin
-                    -->
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.2.1</version>
+                    <version>${maven-source-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <!--
@@ -153,12 +165,15 @@
                     -->
                     <groupId>org.bsc.maven</groupId>
                     <artifactId>maven-processor-plugin</artifactId>
-                    <version>4.4</version>
+                    <version>4.5</version>
                 </plugin>
                 <plugin>
+                    <!--
+                    https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-enforcer-plugin
+                    -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>3.0.0-M3</version>
+                    <version>3.1.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -167,7 +182,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.2.1</version>
+                <version>${maven-source-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>

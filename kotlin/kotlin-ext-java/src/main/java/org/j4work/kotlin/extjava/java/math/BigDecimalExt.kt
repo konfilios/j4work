@@ -53,13 +53,13 @@ fun String?.toBigDecimal(
     defaultIfNull: BigDecimal = BigDecimal.ZERO,
     roundingMode: RoundingMode = RoundingMode.HALF_UP
 ): BigDecimal =
-    if (this == null) {
+    if (this.isNullOrBlank()) {
         defaultIfNull
     } else {
         try {
             BigDecimal(this)
                 .setScale(scale, roundingMode)
-        } catch (e: IllegalStateException) {
+        } catch (e: Exception) {
             throw IllegalStateException("Could not convert string '$this' to BigDecimal", e)
         }
     }

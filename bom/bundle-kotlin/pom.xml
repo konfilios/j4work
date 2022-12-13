@@ -14,16 +14,13 @@
     <name>j4work/bom/bundle/kotlin</name>
     <packaging>pom</packaging>
 
-    <properties>
-    </properties>
-
     <dependencies>
         <!--
         Compile dependencies
         -->
         <dependency>
             <groupId>io.github.microutils</groupId>
-            <artifactId>kotlin-logging</artifactId>
+            <artifactId>kotlin-logging-jvm</artifactId>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -95,7 +92,7 @@
             <dependency>
                 <groupId>org.apache.tika</groupId>
                 <artifactId>tika-core</artifactId>
-                <version>1.24.1</version>
+                <version>${tika.version}</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.brotli/dec -->

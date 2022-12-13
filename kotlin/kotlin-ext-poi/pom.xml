@@ -12,10 +12,6 @@
     <artifactId>kotlin-ext-poi</artifactId>
     <name>j4work/kotlin/ext-poi</name>
 
-    <properties>
-        <apache-poi.version>4.1.0</apache-poi.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.poi</groupId>
