@@ -1,14 +1,13 @@
 package org.j4work.kotlin.extpoi.org.apache.poi.ss.usermodel
 
-import org.apache.poi.hssf.util.CellReference
+import org.apache.poi.ss.util.CellReference
 import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.ss.usermodel.CellType
 import org.apache.poi.ss.usermodel.Row
-import org.apache.poi.ss.util.CellReference.convertColStringToIndex
 
 operator fun Row.get(i: Int): Cell? = getCell(i)
 
-operator fun Row.get(i: String): Cell? = getCell(convertColStringToIndex(i))
+operator fun Row.get(i: String): Cell? = getCell(CellReference.convertColStringToIndex(i))
 
 
 fun Row.cell(

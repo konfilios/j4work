@@ -1,8 +1,8 @@
 package org.j4work.kotlin.extpoi.org.apache.poi.ss.usermodel
 
-import org.apache.poi.hssf.util.CellReference
 import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.ss.usermodel.CellType
+import org.apache.poi.ss.util.CellReference
 
 class CellAppender(
     val row: org.apache.poi.ss.usermodel.Row,
